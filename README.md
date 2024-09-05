@@ -1,10 +1,11 @@
 # info
 This is a private repo for our 5 people to source control of our CSC3002 (C and C++) project.
 feel free to write down your idea about the project.
+## IDE
+JetBrains CLion. compiler version (c++ 20)
 
 # idea About project
 the project hasn't been set yet. 2024-09-04
-IDE: JetBrains CLion. compiler version (c++ 20)
 ## possible practical project
 ### Count the people entering one door using camera and C++
 可以在食堂每个门上方设置一个摄像头，统计该门进出人数。
