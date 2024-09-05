@@ -13,7 +13,7 @@ the project hasn't been set yet. 2024-09-04
 进阶：数据处理，统计食堂人口波动，并给出预测人数最少时间（最适合吃饭的时间）
 
 ### online chatroom 在线聊
-类似于discord的多群组在线聊天室
+类似于discord的多群组在线聊天室，可作为各种课程民间群，同好群的平台  
 难点：多服务器
 
 ## possible gaming project
