@@ -1,6 +1,7 @@
 # info
 This is a private repo for our 5 people to source control of our CSC3002 (C and C++) project.
-feel free to write down your idea about the project.
+feel free to write down your idea about the project.  
+* tip：在GitHub中编辑md文件时，通过在需要换行的句子后加两个空格来实现换行的显示效果。
 ## IDE
 JetBrains CLion. compiler version (c++ 20)
 
