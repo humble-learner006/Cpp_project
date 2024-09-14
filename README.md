@@ -6,7 +6,9 @@ feel free to write down your idea about the project.
 JetBrains CLion. compiler version (c++ 20)
 
 # idea About project
-the project hasn't been set yet. 2024-09-04
+the project hasn't been set yet. 2024-09-04  
+## Possible Reference  
+[C++100+入门项目实战](https://github.com/0voice/introduce_c-cpp_manual)
 ## possible practical project
 ### Count the people entering one door using camera and C++
 可以在食堂每个门上方设置一个摄像头，统计该门进出人数。
