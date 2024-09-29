@@ -9,7 +9,7 @@ feel free to write down your idea about the project.
 ## IDE
 JetBrains CLion. compiler version (c++ 20) //这个有待确认
 
-# idea About project
+# Fold
 the project hasn't been set yet. 2024-09-04  
 ## Possible Reference  
 [C++100+入门项目实战](https://github.com/0voice/introduce_c-cpp_manual)
