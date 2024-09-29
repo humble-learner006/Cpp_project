@@ -5,7 +5,7 @@ I have uploaded a [document](/docx/Project Guidelines.pdf) detailing the project
 which essentially covers the content I discussed in the lecture.   
 If you weren't present in the lecture, please review the document thoroughly.   
 Additionally, I have provided two sample project topics from previous semesters.   
-These examples are intended to give you an idea of what a typical project might entail.   
+These examples are intended to give you an idea of what a typical project might entail.
 However, please do not feel constrained by these examples; you are encouraged to choose any topic that interests you.  
 
 Here are some additional suggestions on how to select topics and approach your project:  
