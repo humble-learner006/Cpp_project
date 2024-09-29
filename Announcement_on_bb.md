@@ -1,10 +1,10 @@
 ## Project guidelines
 Posted on: Friday, September 27, 2024 8:25:19 PM CST
 Dear all,
-I have uploaded a [document](../Doc/Project Guidelines.pdf) detailing the project guidelines,   
-which essentially covers the content I discussed in the lecture.   
-If you weren't present in the lecture, please review the document thoroughly.   
-Additionally, I have provided two sample project topics from previous semesters.   
+I have uploaded a [document](Doc/Project Guidelines.pdf) detailing the project guidelines,   
+which essentially covers the content I discussed in the lecture.
+If you weren't present in the lecture, please review the document thoroughly.
+Additionally, I have provided two sample project topics from previous semesters.
 These examples are intended to give you an idea of what a typical project might entail.
 However, please do not feel constrained by these examples; you are encouraged to choose any topic that interests you.  
 
