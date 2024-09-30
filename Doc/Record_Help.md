@@ -1,9 +1,9 @@
 This page is for recording the problems we encounter and how we solve it. You may found some useful things in it.
 (本页面记录问题以及解决方案)
 
-- [How to use GitHub ](## GitHub related)
-- [Choose our game engine](## Game engine related )
-- [Steps and skill we need to develop a game](## Overall game developing)
+- [How to use GitHub ](#github-related)
+- [Choose our game engine](##Game engine related)
+- [Steps and skill we need to develop a game](#overall-game-developing)
 # Date: Sep, 29
 ## GitHub related 
 _like Cai_:
