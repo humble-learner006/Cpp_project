@@ -1,11 +1,9 @@
 # info
 This is a private repo for our 5 people to source control of our CSC3002 (C and C++) project.
 feel free to write down your idea about the project.  
-* tip：在GitHub中编辑md文件时，通过在需要换行的句子后加两个空格来实现换行的显示效果。
 * 命名规范：参考[Naming_convention](Doc/Naming_convention.md)
-* bb: 参考[Announcement](Doc/Announcement_on_bb.md)
-* 2 samples of project: [Sample 1 from bb](Doc/Sample_topic_1.pdf), [Sample 2 from bb](Doc/Sample_topic_2.pdf)
-* 
+* information from bb: 参考[Announcement](Doc/Announcement_on_bb.md), [Sample 1 from bb](Doc/Sample_topic_1.pdf), [Sample 2 from bb](Doc/Sample_topic_2.pdf)
+- developing log and help file: 参考[Record&help](Doc/Record&help.md)  
 ## IDE
 JetBrains CLion. compiler version (c++ 20) //这个有待确认
 
