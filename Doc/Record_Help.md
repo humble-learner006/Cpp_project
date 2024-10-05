@@ -4,6 +4,7 @@ This page is for recording the problems we encounter and how we solve it. You ma
 - [How to use GitHub ](#github-related)
 - [Choose our game engine](##Game engine related)
 - [Steps and skill we need to develop a game](#overall-game-developing)
+- [SDL](SDL.md)
 # Date: Sep, 29
 ## GitHub related 
 _like Cai_:
@@ -20,4 +21,6 @@ _like Cai_:
 [24年独立游戏开发入门指南_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1TZpvehE9S/?spm_id_from=333.1007.tianma.1-3-3.click&vd_source=113cb04caaabeca910d6d5580d23d578)
 key word for searching: C++ 2D游戏
 
-
+# Date: Oct, 2
+## give up game engine 
+maybe use SDL

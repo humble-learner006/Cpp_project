@@ -8,6 +8,7 @@ feel free to write down your idea about the project.
 JetBrains CLion. compiler version (c++ 20) //这个有待确认
 
 # Fold
+CLion：https://blog.csdn.net/annesede/article/details/133940779
 the project hasn't been set yet. 2024-09-04  
 ## Possible Reference  
 [C++100+入门项目实战](https://github.com/0voice/introduce_c-cpp_manual)
