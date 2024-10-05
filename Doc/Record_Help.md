@@ -2,7 +2,7 @@ This page is for recording the problems we encounter and how we solve it. You ma
 (本页面记录问题以及解决方案)
 
 - [How to use GitHub ](#github-related)
-- [Choose our game engine](##Game engine related)
+- [Choose our game engine](#game-engine-related)
 - [Steps and skill we need to develop a game](#overall-game-developing)
 - [SDL](SDL.md)
 # Date: Sep, 29
