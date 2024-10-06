@@ -1,9 +1,9 @@
 # info
 This is a private repo for our 5 people to source control of our CSC3002 (C and C++) project.
 feel free to write down your idea about the project.  
-* 命名规范：参考[Naming_convention](Doc/Naming_convention.md)
-* information from bb: 参考[Announcement](Doc/Announcement_on_bb.md), [Sample 1 from bb](Doc/Sample_topic_1.pdf), [Sample 2 from bb](Doc/Sample_topic_2.pdf)
-- developing log and help file: 参考[Record_Help](Doc/Record_Help.md)  
+* 命名规范：参考[Naming_convention](Docs/Naming_convention.md)
+* information from bb: 参考[Announcement](Docs/Announcement_on_bb.md), [Sample 1 from bb](Docs/Sample_topic_1.pdf), [Sample 2 from bb](Docs/Sample_topic_2.pdf)
+- developing log and help file: 参考[Record_Help](Docs/Record_Help.md)  
 ## IDE
 JetBrains CLion. compiler version (c++ 20) //这个有待确认
 
