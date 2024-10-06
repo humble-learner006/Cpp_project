@@ -8,10 +8,10 @@ A vidio to [show](https://www.youtube.com/watch?v=3rnE5GbklN0)
 	- <img src="Images/GameGenres.png" width="210px">
 - Visual Novel
 	- Va-11 Hall-A
-	- <img src="Images/GameGenres.png-1" width="210px">
+	- <img src="Images/GameGenres-1.png" width="210px">
 - Roll play game (RPG)
 	-  undertale
-	- <img src="Images/GameGenres.png-2" width="210px">
+	- <img src="Images/GameGenres-2.png" width="210px">
 	- engaging battle and dialogue system
 - Rhythm - do it to the beat
 	- Lofi Ping Pong
@@ -19,7 +19,7 @@ A vidio to [show](https://www.youtube.com/watch?v=3rnE5GbklN0)
 	- base on/ develop from nowadays existed game
 - Action
 	- Katana Zero
-	- <img src="Images/GameGenres.png-3" width="210px">
+	- <img src="Images/GameGenres-3.png" width="210px">
 	- it is all about action! 
 	- you need practice and die many times
 - Fight game
