@@ -4,7 +4,8 @@ A vidio to [show](https://www.youtube.com/watch?v=3rnE5GbklN0)
 - Adventure
 	- hyper light drifter
 	- 我感觉我们要做这种类型的2D地图
-	- ![[Images/GameGenres-13.png|300]]
+   	- ![image](Images/GameGenres-13.png)
+	- ![[|300]]
 	- ![[Images/GameGenres.png|300]]
 - Visual Novel
 	- Va-11 Hall-A
