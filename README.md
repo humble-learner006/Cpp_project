@@ -7,7 +7,7 @@ feel free to write down your idea about the project.
 - `Cpp_project/`文件夹下放的是项目文档。
 - `Cpp_project/Docs/Images`文件夹下放的是图片附件，这些图片用在文档里。
 ## Hyperlinks
-
+- [CSC3002_Proposal](Docs/CSC3002_Proposal.pdf)
 * How to name things：refer to [naming_convention](Docs/naming_convention.md)
 * Information from bb: 
   * [Announcement](Docs/announcement_on_bb.md); 
