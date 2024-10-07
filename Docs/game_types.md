@@ -1,0 +1,70 @@
+game genres: a easy way to convey the type and mechanics
+A article to [show](https://gamemaker.io/en/blog/2d-game-genres)
+A vidio to [show](https://www.youtube.com/watch?v=3rnE5GbklN0)
+- Adventure
+	- hyper light drifter
+	- 我感觉我们要做这种类型的2D地图
+	- <img src="Images/GameGenres-13.png" width="210px">
+	- <img src="Images/GameGenres.png" width="210px">
+- Visual Novel
+	- Va-11 Hall-A
+	- <img src="Images/GameGenres.png-1" width="210px">
+- Roll play game (RPG)
+	-  undertale
+	- <img src="Images/GameGenres.png-2" width="210px">
+	- engaging battle and dialogue system
+- Rhythm - do it to the beat
+	- Lofi Ping Pong
+- Sport game
+	- base on/ develop from nowadays existed game
+- Action
+	- Katana Zero
+	- <img src="Images/GameGenres.png-3" width="210px">
+	- it is all about action! 
+	- you need practice and die many times
+- Fight game
+	- Street Fighter
+	- SHATTERED REALMS
+- bullet hell 弹幕类
+	- Touhou
+	- <img src="Images/GameGenres-4.png" width="210px">
+- Turn Base
+	- Fire Emblem
+	- Keylocker
+	- <img src="Images/GameGenres-5.png" width="210px">
+	- <img src="Images/GameGenres-6.png" width="210px">
+	- estimate and calculate and chack your strategy
+- Multiplayer
+	- 坦克动荡
+	- 派对合家欢游戏
+- Roguelike
+	- Hades
+	- Revita
+	- <img src="Images/GameGenres-7.png" width="210px">
+	- A roguelike is a subgenre of video games characterized by procedurally **generated levels, turn-based gameplay, and permanent death of characters**. Players often delve into dungeons, collecting items and battling enemies, with the ultimate goal of reaching the deepest levels or defeating a powerful boss.
+	- every time new start
+	- random generated level, boss same
+- metroidvania
+	- 合成自任天堂旗下的《银河战士(Metroid)》和Konami旗下的《恶魔城(Castlevania)》
+	- Hollow Knight
+	- <img src="Images/GameGenres-8.png" width="210px">
+	- <img src="Images/GameGenres-9.png" width="210px">
+	- upgrade yourself to explore **more area**
+- Plateformer
+	  - Celeste
+	  - moonleap
+	  - gravity shifting
+	  - -<img src="Images/GameGenres-10.png" width="210px">
+  - idle game
+    - Cookie Clicker
+    - you can play it **while doing other things**
+    - <img src="Images/GameGenres-11.png" width="210px">
+    - 增量游戏（Incremental game），俗称放置游戏（Idle game）[1]，又称点击游戏（Clicker game)
+    - 资源收集、升级和自动化的元素。
+    - 玩家可以通过偶尔的点击或策略来优化游戏进程，体验轻松和渐进式的游戏乐趣
+- Beatem up game
+	- <img src="Images/GameGenres-12.png" width="210px">
+	-  punching your way through swathes of enemies until you reach a checkpoint or get taken out yourself.
+
+
+  

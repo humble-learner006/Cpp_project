@@ -4,7 +4,7 @@
 [English version](https://github.com/google/styleguide?tab=readme-ov-file)
 ## Filename
 ```
-my_useful_class.cpp
+my_useful_class.cpp //全部小写，中间用下划线链接
 header.h
 folders use Start with capitcal letter, and use underscore to separate words.
 ```
@@ -14,7 +14,7 @@ folders use Start with capitcal letter, and use underscore to separate words.
 ```
 ## Class, struct, typedef, Enumeration（枚举）, type template parameter
 ```
-MyExcitingClass
+MyExcitingClass //大驼峰
 MyExcitingEnum
 /*均使用相同约定, 即以大写字母开始, 每个单词首字母均大写, 不包含下划线*/
 ```
