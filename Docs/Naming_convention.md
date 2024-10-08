@@ -1,6 +1,6 @@
 # Naming_convention (命名规范)
 ## reference
-[google opensource stylisitc manual中文](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/naming.html)
+[google opensource stylistic manual中文](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/naming.html)
 [English version](https://github.com/google/styleguide?tab=readme-ov-file)
 ## Filename
 ```
