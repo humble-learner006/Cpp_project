@@ -1,0 +1,2 @@
+﻿02_getting_an_image_on_the_screen.obj : error LNK2005: SDL_main already defined in 01_hello_SDL.obj
+D:\Desktop\00_24-25_term1\CSC3002\Cpp_project\Project\Like_project\SDL2_bouncing\x64\Debug\SDL2_bouncing.exe : fatal error LNK1169: one or more multiply defined symbols found
