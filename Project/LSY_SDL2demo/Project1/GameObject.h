@@ -9,7 +9,7 @@ public:
 
 	void Update();
 	void Render();
-	// 测试中
+	// 键盘控制玩家移动，可能后面会新建子类？
 	void Move(int direction);
 
 private:

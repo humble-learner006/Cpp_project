@@ -46,6 +46,24 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 }
 
 void Game::handleEvent() {
+	//键盘控制移动优化，现在很丝滑
+	// SDL_GetKeyboardState处理连续响应按键，每帧都获取按键状态
+	const Uint8* state = SDL_GetKeyboardState(NULL);
+
+	if (state[SDL_SCANCODE_A]) {
+		player->Move(2);  // 向左移动
+	}
+	if (state[SDL_SCANCODE_D]) {
+		player->Move(1);  // 向右移动
+	}
+	if (state[SDL_SCANCODE_W]) {
+		player->Move(3);  // 向上移动
+	}
+	if (state[SDL_SCANCODE_S]) {
+		player->Move(4);  // 向下移动
+	}
+
+	
 	// SDL_Event contains one of any sub-event(the union of sub-event)
 	SDL_Event event;
 	// pull the first event from the queue. copying the value into a parameter of type SDL_Event
@@ -73,30 +91,34 @@ void Game::handleEvent() {
 			case SDL_QUIT:
 				isRunning = false;
 				break;
-				
-			case SDL_KEYDOWN:
-				switch (event.key.keysym.scancode)
+			
+			// 键盘控制移动初版，切换不够顺畅
+			/*pollevent是逐个提取事件，用于响应一次性事件，
+			比如单个按键的按下和释放，如果持续按住按键希望移动
+			会出现延迟，因为需要捕捉持续按键行为*/
+
+			/*case SDL_KEYDOWN:
+				if (event.key.keysym.sym == SDLK_w)
 				{
-					case SDL_SCANCODE_A:
-						player->Move(2);
-						break;
-						
-					case SDL_SCANCODE_D:
-						player->Move(1);
-						break;
-						
-					case SDL_SCANCODE_W:
-						player->Move(3);
-						break;
-						
-					case SDL_SCANCODE_S:
-						player->Move(4);
-						break;
-						
-					default:
-						break;
+					SDL_Log("UP");
+					player->Move(3);
 				}
-				break;
+				if (event.key.keysym.sym == SDLK_s)
+				{
+					SDL_Log("DOWN");
+					player->Move(4);
+				}
+				if (event.key.keysym.sym == SDLK_a)
+				{
+					SDL_Log("LEFT");
+					player->Move(2);
+				}
+				if (event.key.keysym.sym == SDLK_d)
+				{
+					SDL_Log("RIGHT");
+					player->Move(1);
+				}
+				break;*/
 
 			default:
 				break;
