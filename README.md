@@ -1,11 +1,6 @@
 # Introduction
 This is a private repo for our 5 people to source control of our CSC3002 (C and C++) project.
 feel free to write down your idea about the project. 
-## 文件管理系统理念是：
-- **所有的文档**存储在`Cpp_project/Docs/` 文件夹下
-- 所有的文档应该直接通过链接就能看到，超链接在[Hyperlinks](#hyperlinks)二级标题内。如果你上传文档，文档之间最好有联系。我们不希望浪费时间在documentation的查找上。如果没有联系应该通过`Docs/`文件夹下的`README.md`文档来联系。
-- `Cpp_project/`文件夹下放的是项目文档。
-- `Cpp_project/Docs/Images`文件夹下放的是图片附件，这些图片用在文档里。
 ## Hyperlinks
 - [CSC3002_Proposal](Docs/CSC3002_Proposal.pdf)
 * How to name things：refer to [naming_convention](Docs/naming_convention.md)
@@ -23,8 +18,11 @@ JetBrains CLion. compiler version (c++ 20) //这个有待确认
 Qt Creator //这个有待确认
 Visual Studio 2022 //这个有待确认
 
-
-
+## 文件管理系统理念是：
+- **所有的文档**存储在`Cpp_project/Docs/` 文件夹下
+- 所有的文档应该直接通过链接就能看到，超链接在[Hyperlinks](#hyperlinks)二级标题内。如果你上传文档，文档之间最好有联系。我们不希望浪费时间在documentation的查找上。如果没有联系应该通过`Docs/`文件夹下的`README.md`文档来联系。
+- `Cpp_project/`文件夹下放的是项目文档。
+- `Cpp_project/Docs/Images`文件夹下放的是图片附件，这些图片用在文档里。
 
 # Fold 折叠内容不用参考
 CLion：https://blog.csdn.net/annesede/article/details/133940779
