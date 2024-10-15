@@ -21,6 +21,7 @@ feel free to write down your idea about the project.
 ## IDE
 JetBrains CLion. compiler version (c++ 20) //这个有待确认  
 Qt Creator //这个有待确认
+Visual Studio 2022 //这个有待确认
 
 
 

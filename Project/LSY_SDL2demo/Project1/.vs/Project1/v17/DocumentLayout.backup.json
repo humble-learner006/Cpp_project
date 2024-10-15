@@ -30,8 +30,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -42,8 +46,7 @@
               "RelativeToolTip": "GameObject.cpp",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-13T17:22:38.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T17:22:38.021Z"
             },
             {
               "$type": "Document",
@@ -55,8 +58,7 @@
               "RelativeToolTip": "GameObject.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-13T17:18:05.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T17:18:05.673Z"
             },
             {
               "$type": "Document",
@@ -66,7 +68,7 @@
               "RelativeDocumentMoniker": "Game.cpp",
               "ToolTip": "D:\\Cpp_project\\Project\\LSY_SDL2demo\\Project1\\Game.cpp",
               "RelativeToolTip": "Game.cpp",
-              "ViewState": "AgIAACMAAAAAAAAAAAAqwEcAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAqwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-13T13:30:34.321Z",
               "EditorCaption": ""
@@ -81,8 +83,7 @@
               "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-13T11:45:04.893Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T11:45:04.893Z"
             },
             {
               "$type": "Document",
