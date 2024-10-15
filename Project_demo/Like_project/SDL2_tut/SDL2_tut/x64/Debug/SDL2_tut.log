@@ -1,4 +1,0 @@
-﻿  pingpong3.cpp
-D:\Desktop\00_24-25_term1\CSC3002\Cpp_project\Project\Like_project\SDL2_tut\pingpong3.cpp(103,52): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-D:\Desktop\00_24-25_term1\CSC3002\Cpp_project\Project\Like_project\SDL2_tut\pingpong3.cpp(103,52): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  SDL2_tut.vcxproj -> D:\Desktop\00_24-25_term1\CSC3002\Cpp_project\Project\Like_project\SDL2_tut\x64\Debug\SDL2_tut.exe
