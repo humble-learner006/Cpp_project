@@ -1,2 +1,0 @@
-[spyder.plugins]
-terminal = spyder_terminal.terminalplugin:TerminalPlugin
