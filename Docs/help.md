@@ -28,3 +28,4 @@ maybe use SDL
 # Date: Oct, 16
 SDL报错：*由于找不到`SDL2.dll`,无法继续执行代码，重装可能会解决问题。*
 解决方案：把SDL2.dll粘贴到main.cpp相同目录下。
+[VS常用快捷键](https://zhuanlan.zhihu.com/p/260205834)
