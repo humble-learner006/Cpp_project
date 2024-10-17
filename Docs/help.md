@@ -4,7 +4,7 @@ This page is for recording the problems we encounter and how we solve it. You ma
 - [How to use GitHub ](#github-related)
 - [Choose our game engine](#game-engine-related)
 - [Steps and skill we need to develop a game](#overall-game-developing)
-- [SDL](SDL.md)
+- [SDL2](SDL2.md)
 # Date: Sep, 29
 ## GitHub related 
 _like Cai_:
@@ -24,3 +24,7 @@ key word for searching: C++ 2D游戏
 # Date: Oct, 2
 ## give up game engine 
 maybe use SDL
+
+# Date: Oct, 16
+SDL报错：*由于找不到`SDL2.dll`,无法继续执行代码，重装可能会解决问题。*
+解决方案：把SDL2.dll粘贴到main.cpp相同目录下。
