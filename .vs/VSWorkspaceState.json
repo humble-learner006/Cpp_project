@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Project",
-    "\\Project\\Like_project",
-    "\\Project\\Like_project\\SDL2_tut"
+    "\\Project\\00_Asset",
+    "\\Project\\01_source_file",
+    "\\Project\\02_header_file",
+    "\\Project\\SDL2"
   ],
-  "SelectedNode": "\\Project\\Like_project\\SDL2_tut\\SDL2_tut.vcxproj",
+  "SelectedNode": "\\Project\\SDL2\\SDL2-2.30.8_VC",
   "PreviewInSolutionExplorer": false
 }
