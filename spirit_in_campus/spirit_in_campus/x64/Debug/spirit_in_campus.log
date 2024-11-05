@@ -1,2 +1,7 @@
 ﻿  Game.cpp
-  spirit_in_campus.vcxproj -> E:\desktop\Cpp_project\Cpp_project\spirit_in_campus\x64\Debug\spirit_in_campus.exe
+  GameObject.cpp
+  interactiveObject.cpp
+  TextureManager.cpp
+  main.cpp
+  正在生成代码...
+  spirit_in_campus.vcxproj -> C:\Users\fatmmouse\Desktop\Cpp_project\spirit_in_campus\x64\Debug\spirit_in_campus.exe
