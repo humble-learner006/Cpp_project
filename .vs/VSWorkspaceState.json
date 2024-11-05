@@ -2,11 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Project",
-    "\\Project\\00_Asset",
-    "\\Project\\01_source_file",
-    "\\Project\\02_header_file",
-    "\\Project\\SDL2"
+    "\\Project\\spirit_in_campus",
+    "\\Project\\spirit_in_campus\\01_source_file"
   ],
-  "SelectedNode": "\\Project\\SDL2\\SDL2-2.30.8_VC",
+  "SelectedNode": "\\Project\\spirit_in_campus\\spirit_in_campus.sln",
   "PreviewInSolutionExplorer": false
 }

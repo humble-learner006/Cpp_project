@@ -13,10 +13,59 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\header_file">
+      <UniqueIdentifier>{68246227-e748-455c-b942-40f1088c1125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\source_file">
+      <UniqueIdentifier>{cdd7cb9a-7877-4a4e-a6f9-10a658e84b48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Assest">
+      <UniqueIdentifier>{ad9e0e18-ea8f-4a3a-bc43-80a2540ed0d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\01_source_file\GameObject.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\01_source_file\interactiveObject.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\01_source_file\TextureManager.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\01_source_file\Game.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\02_header_file\Game.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\GameObject.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\interactiveObject.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\TextureManager.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\common.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\00_Asset\bunny_grass.png">
+      <Filter>Resource Files\Assest</Filter>
+    </Image>
+    <Image Include="..\00_Asset\bunny_outline.png">
+      <Filter>Resource Files\Assest</Filter>
+    </Image>
+    <Image Include="..\00_Asset\sprite.png">
+      <Filter>Resource Files\Assest</Filter>
+    </Image>
   </ItemGroup>
 </Project>

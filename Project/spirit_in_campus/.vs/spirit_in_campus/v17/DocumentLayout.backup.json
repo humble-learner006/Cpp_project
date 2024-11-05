@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\cpp\\Cpp_project\\spirit_in_campus\\",
+  "WorkspaceRootPath": "D:\\Cpp_project\\Project\\spirit_in_campus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1DAC7FF-B888-464F-9597-510440BEF15A}|spirit_in_campus\\spirit_in_campus.vcxproj|D:\\cpp\\Cpp_project\\spirit_in_campus\\spirit_in_campus\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{B1DAC7FF-B888-464F-9597-510440BEF15A}|spirit_in_campus\\spirit_in_campus.vcxproj|D:\\Cpp_project\\Project\\spirit_in_campus\\01_source_file\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B1DAC7FF-B888-464F-9597-510440BEF15A}|spirit_in_campus\\spirit_in_campus.vcxproj|solutionrelative:01_source_file\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1DAC7FF-B888-464F-9597-510440BEF15A}|spirit_in_campus\\spirit_in_campus.vcxproj|D:\\Cpp_project\\Project\\spirit_in_campus\\spirit_in_campus\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B1DAC7FF-B888-464F-9597-510440BEF15A}|spirit_in_campus\\spirit_in_campus.vcxproj|solutionrelative:spirit_in_campus\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\cpp\\Cpp_project\\spirit_in_campus\\spirit_in_campus\\main.cpp",
-              "RelativeDocumentMoniker": "spirit_in_campus\\main.cpp",
-              "ToolTip": "D:\\cpp\\Cpp_project\\spirit_in_campus\\spirit_in_campus\\main.cpp",
-              "RelativeToolTip": "spirit_in_campus\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Game.cpp",
+              "DocumentMoniker": "D:\\Cpp_project\\Project\\spirit_in_campus\\01_source_file\\Game.cpp",
+              "RelativeDocumentMoniker": "01_source_file\\Game.cpp",
+              "ToolTip": "D:\\Cpp_project\\Project\\spirit_in_campus\\01_source_file\\Game.cpp*",
+              "RelativeToolTip": "01_source_file\\Game.cpp*",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAqwHEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-17T15:50:32.468Z",
+              "WhenOpened": "2024-11-05T08:23:09.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Cpp_project\\Project\\spirit_in_campus\\spirit_in_campus\\main.cpp",
+              "RelativeDocumentMoniker": "spirit_in_campus\\main.cpp",
+              "ToolTip": "D:\\Cpp_project\\Project\\spirit_in_campus\\spirit_in_campus\\main.cpp",
+              "RelativeToolTip": "spirit_in_campus\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-05T08:01:32.426Z",
               "EditorCaption": ""
             }
           ]

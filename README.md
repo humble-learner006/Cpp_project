@@ -14,9 +14,13 @@ feel free to write down your idea about the project.
 - A quick introduction to game genres （游戏类型）：[game_type](Docs/game_type.md)
 - SDL2 library beginner check ：[SDL2](Docs/SDL2.md)**资源汇总**
 - 关于项目结构的建议：[project_division](Docs/project_division.md)
+## 进度日志
+对项目内容的所有修改都记录在这里  
+统一归档在`Docs/进度日志`文件夹当中  
+* [11-5](Docs/进度日志/11-5.md) 项目架构迁移和VS文件管理
 ## IDE
 JetBrains CLion. compiler version (c++ 20) //这个有待确认  
-Qt Creator //这个有待确认
+Qt Creator //这个有待确认  
 Visual Studio 2022 //这个有待确认
 
 ## 文件管理系统理念是：
