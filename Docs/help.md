@@ -32,4 +32,4 @@ SDL报错：*由于找不到`SDL2.dll`,无法继续执行代码，重装可能�
 
 # Date: Nov, 11
 Xu Ziyang
-[浙大sdl教学](http://www.cad.zju.edu.cn/home/xgliu/CT2016/sdlTutorBook.pdf)
+[浙大sdl教学](http://www.cad.zju.edu.cn/home/xgliu/CT2016/sdlTutorBook.pdf) 页数不多，看着上面学感觉不错
