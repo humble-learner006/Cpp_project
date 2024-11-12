@@ -7,12 +7,14 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "interactiveObject.h"
+#include "map.h"
 
 using namespace std;
 
 GameObject* player;
 GameObject* tmp;
 interactiveObject* plant;
+map* Map;
 
 SDL_Renderer* Game::renderer = nullptr;
 
@@ -57,6 +59,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	player->animation(true, 7, 150);
 	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  200, 300, 200, 200);
 	tmp = new GameObject("", 0, 300, 320, 320);
+
+	Map = new map();
 }
 
 void Game::handleEvent() {
@@ -64,47 +68,26 @@ void Game::handleEvent() {
 	// SDL_GetKeyboardState����������Ӧ������ÿ֡����ȡ����״̬
 	const Uint8* state = SDL_GetKeyboardState(NULL);
 
-	// if (state[SDL_SCANCODE_A]) {
-	// 	player->Move(2);  // �����ƶ�
-	// }
-	// if (state[SDL_SCANCODE_D]) {
-	// 	player->Move(1);  // �����ƶ�
-	// }
-	// if (state[SDL_SCANCODE_W]) {
-	// 	player->Move(3);  // �����ƶ�
-	// }
-	// if (state[SDL_SCANCODE_S]) {
-	// 	player->Move(4);  // �����ƶ�
-	// }
-	// if (state[SDL_SCANCODE_TAB]) {
-	// 	plant->highlight();
-	// }
-	// else
-	// {
-	// 	plant->dehighlight();
-	// }
-
 	if (currentState == PLAYING){
-
-		if (state[SDL_SCANCODE_A]) {
-		player->Move(2);  // �����ƶ�
-	}
-	if (state[SDL_SCANCODE_D]) {
-		player->Move(1);  // �����ƶ�
-	}
-	if (state[SDL_SCANCODE_W]) {
-		player->Move(3);  // �����ƶ�
-	}
-	if (state[SDL_SCANCODE_S]) {
-		player->Move(4);  // �����ƶ�
-	}
-	if (state[SDL_SCANCODE_TAB]) {
-		plant->highlight();
-	}
-	else
-	{
-		plant->dehighlight();
-	}
+			if (state[SDL_SCANCODE_A]) {
+			player->Move(2);  // �����ƶ�
+		}
+		if (state[SDL_SCANCODE_D]) {
+			player->Move(1);  // �����ƶ�
+		}
+		if (state[SDL_SCANCODE_W]) {
+			player->Move(3);  // �����ƶ�
+		}
+		if (state[SDL_SCANCODE_S]) {
+			player->Move(4);  // �����ƶ�
+		}
+		if (state[SDL_SCANCODE_TAB]) {
+			plant->highlight();
+		}
+		else
+		{
+			plant->dehighlight();
+		}
 	}
 
 
