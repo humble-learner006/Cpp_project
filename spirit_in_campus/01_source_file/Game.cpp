@@ -163,6 +163,7 @@ void Game::render() {
 		quitButton->Render();
 	}
 	else if (currentState == PLAYING) {
+		Map->DrawMap();
 		player->Render();
 		plant->Render();
 	}
