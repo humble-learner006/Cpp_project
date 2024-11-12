@@ -1,8 +1,9 @@
-/* ÓÎÏ·Ö÷Ñ­»·ÄÚÈÝ¿ØÖÆ
-* ËùÓÐ¾ßÌåµÄ¶«Î÷ÔÚÕâÀï·¢Éú
+/* ï¿½ï¿½Ï·ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½
+* ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·¢ï¿½ï¿½
 */
 
 #include "Game.h"
+#include "Button.h"
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "interactiveObject.h"
@@ -26,11 +27,11 @@ Game::~Game() {
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flags = 0;
-	// ³õÊ¼»¯Ê±¿ÉÑ¡ÔñÊÇ·ñÈ«ÆÁ
+	// ï¿½ï¿½Ê¼ï¿½ï¿½Ê±ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ç·ï¿½È«ï¿½ï¿½
 	if (fullscreen) {
 		flags = SDL_WINDOW_FULLSCREEN;
 	}
-	// È·ÈÏSDLÊÇ·ñ³É¹¦³õÊ¼»¯²¢½¨Á¢´°¿Ú
+	// È·ï¿½ï¿½SDLï¿½Ç·ï¿½É¹ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 		//cout << "Subsystems Initialized!..." << endl;
 
@@ -48,6 +49,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		isRunning = false;
 	}
 
+	startButton = new Button("Begin", 100, 100, 200, 50, renderer);
+	settingsButton = new Button("Settings", 100, 200, 200, 50, renderer);
+	quitButton = new Button("Exit", 100, 300, 200, 50, renderer);
+
 	player = new GameObject("../00_Asset/spirit.png", 0, 300, 320, 320);
 	player->animation(true, 7, 150);
 	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  200, 300, 200, 200);
@@ -55,21 +60,43 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 }
 
 void Game::handleEvent() {
-	//¼üÅÌ¿ØÖÆÒÆ¶¯ÓÅ»¯£¬ÏÖÔÚºÜË¿»¬
-	// SDL_GetKeyboardState´¦ÀíÁ¬ÐøÏìÓ¦°´¼ü£¬Ã¿Ö¡¶¼»ñÈ¡°´¼ü×´Ì¬
+	//ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Å»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½Ë¿ï¿½ï¿½
+	// SDL_GetKeyboardStateï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ö¡ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½×´Ì¬
 	const Uint8* state = SDL_GetKeyboardState(NULL);
 
-	if (state[SDL_SCANCODE_A]) {
-		player->Move(2);  // Ïò×óÒÆ¶¯
+	// if (state[SDL_SCANCODE_A]) {
+	// 	player->Move(2);  // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
+	// }
+	// if (state[SDL_SCANCODE_D]) {
+	// 	player->Move(1);  // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
+	// }
+	// if (state[SDL_SCANCODE_W]) {
+	// 	player->Move(3);  // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
+	// }
+	// if (state[SDL_SCANCODE_S]) {
+	// 	player->Move(4);  // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
+	// }
+	// if (state[SDL_SCANCODE_TAB]) {
+	// 	plant->highlight();
+	// }
+	// else
+	// {
+	// 	plant->dehighlight();
+	// }
+
+	if (currentState == PLAYING){
+
+		if (state[SDL_SCANCODE_A]) {
+		player->Move(2);  // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 	}
 	if (state[SDL_SCANCODE_D]) {
-		player->Move(1);  // ÏòÓÒÒÆ¶¯
+		player->Move(1);  // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 	}
 	if (state[SDL_SCANCODE_W]) {
-		player->Move(3);  // ÏòÉÏÒÆ¶¯
+		player->Move(3);  // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 	}
 	if (state[SDL_SCANCODE_S]) {
-		player->Move(4);  // ÏòÏÂÒÆ¶¯
+		player->Move(4);  // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 	}
 	if (state[SDL_SCANCODE_TAB]) {
 		plant->highlight();
@@ -77,6 +104,7 @@ void Game::handleEvent() {
 	else
 	{
 		plant->dehighlight();
+	}
 	}
 
 
@@ -101,17 +129,23 @@ void Game::handleEvent() {
 		}
 	*
 	*/
-	while (SDL_PollEvent(&event)) {  // Ê¹ÓÃ while Ñ­»·´¦ÀíËùÓÐÊÂ¼þ
-		switch (event.type)
-		{
-		case SDL_QUIT:
+	while (SDL_PollEvent(&event)) {
+		if (event.type == SDL_QUIT) {
 			isRunning = false;
-			break;
-
-		default:
-			break;
 		}
-		//°´r¼ü¸½Éí¿É»¥¶¯ÎïÆ·ÒÆ¶¯-Î´Íê³É
+
+		if (currentState == MENU) {
+			if (startButton->IsClicked(event)) {
+				currentState = PLAYING;
+			}
+			else if (settingsButton->IsClicked(event)) {
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½Å¥ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
+			}
+			else if (quitButton->IsClicked(event)) {
+				isRunning = false;
+			}
+		}
+
 		if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r) {
 			if (!isPossess) {
 				isPossess = true;
@@ -125,6 +159,12 @@ void Game::handleEvent() {
 			}
 			
 		}
+	\
+		//ï¿½ï¿½rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É»ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Æ¶ï¿½-Î´ï¿½ï¿½ï¿½
+		/*if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r) {
+			player->Possess(plant);
+			player = plant;
+		}*/
 	}
 }
 void Game::update() {
@@ -134,16 +174,25 @@ void Game::update() {
 }
 void Game::render() {
 	SDL_RenderClear(renderer);
-	// this is where to add stuff on render
-	// first rect: source rect; secnd rect: destination rect
-	player->Render();
-	plant->Render();
-
+	if (currentState == MENU) {
+		startButton->Render();
+		settingsButton->Render();
+		quitButton->Render();
+	}
+	else if (currentState == PLAYING) {
+		player->Render();
+		plant->Render();
+	}
 	SDL_RenderPresent(renderer);
 }
+
 void Game::clean() {
+	delete startButton;
+	delete settingsButton;
+	delete quitButton;
+	delete player;
+	delete plant;
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
-	//cout << "game cleaned" << endl;
 }
