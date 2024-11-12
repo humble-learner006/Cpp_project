@@ -71,8 +71,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\00_Asset;..\01_source_file;..\02_header_file;..\03_SDL2\SDL2-2.30.8_VC\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\00_Asset;..\01_source_file;..\02_header_file;..\03_SDL2\SDL2-2.30.8_VC\include;$(IncludePath);..\02_header_file</IncludePath>
     <LibraryPath>..\03_SDL2\SDL2-2.30.8_VC\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);;..\02_header_file</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -108,7 +111,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Cpp_project\Project\SDL2\SDL2-2.30.8_VC\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cpp_project\Project\SDL2\SDL2-2.30.8_VC\include;%(AdditionalIncludeDirectories);..\02_header_file;..\02_header_file;$..\02_header_file</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,6 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>;..\02_header_file;..\02_header_file;$..\02_header_file</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\01_source_file\Button.cpp" />
     <ClCompile Include="..\01_source_file\Game.cpp" />
     <ClCompile Include="..\01_source_file\GameObject.cpp" />
     <ClCompile Include="..\01_source_file\interactiveObject.cpp" />
@@ -140,6 +145,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\02_header_file\Button.h" />
     <ClInclude Include="..\02_header_file\common.h" />
     <ClInclude Include="..\02_header_file\Game.h" />
     <ClInclude Include="..\02_header_file\GameObject.h" />
@@ -150,6 +156,10 @@
     <Image Include="..\00_Asset\bunny_grass.png" />
     <Image Include="..\00_Asset\bunny_outline.png" />
     <Image Include="..\00_Asset\sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\00_Asset\arial.ttf" />
+    <Font Include="..\00_Asset\GOUDYSTO.TTF" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

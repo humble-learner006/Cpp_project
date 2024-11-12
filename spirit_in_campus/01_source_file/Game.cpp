@@ -3,6 +3,7 @@
 */
 
 #include "Game.h"
+#include "Button.h"
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "interactiveObject.h"
@@ -46,90 +47,83 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		isRunning = false;
 	}
 
+	startButton = new Button("Begin", 100, 100, 200, 50, renderer);
+	settingsButton = new Button("Settings", 100, 200, 200, 50, renderer);
+	quitButton = new Button("Exit", 100, 300, 200, 50, renderer);
+
 	player = new GameObject("../00_Asset/sprite.png", renderer, 0, 300, 64, 64);
 	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png", renderer, 200, 300, 200, 200);
 
+	currentState = MENU;
 }
 
 void Game::handleEvent() {
-	//键盘控制移动优化，现在很丝滑
-	// SDL_GetKeyboardState处理连续响应按键，每帧都获取按键状态
-	const Uint8* state = SDL_GetKeyboardState(NULL);
-
-	if (state[SDL_SCANCODE_A]) {
-		player->Move(2);  // 向左移动
-	}
-	if (state[SDL_SCANCODE_D]) {
-		player->Move(1);  // 向右移动
-	}
-	if (state[SDL_SCANCODE_W]) {
-		player->Move(3);  // 向上移动
-	}
-	if (state[SDL_SCANCODE_S]) {
-		player->Move(4);  // 向下移动
-	}
-	if (state[SDL_SCANCODE_TAB]) {
-		plant->highlight();
-	}
-	else
-	{
-		plant->dehighlight();
-	}
-
-
-	// SDL_Event contains one of any sub-event(the union of sub-event)
 	SDL_Event event;
-	// pull the first event from the queue. copying the value into a parameter of type SDL_Event
-	// retuen 0 if event queue is empty
-	/* SDL_PollEvent common use
-	* -------------------------
-	*	SDL_Event ev;
-		bool running = true;
-
-		// Main loop
-		while ( running ) {
-			// Event loop
-			while ( SDL_PolLEvent( &ev )) {
-				// Test members of ev
-			}
-
-			// Wait before next frame
-			SDL_Delay(100);
-		}
-	*
-	*/
-	while (SDL_PollEvent(&event)) {  // 使用 while 循环处理所有事件
-		switch (event.type)
-		{
-		case SDL_QUIT:
+	while (SDL_PollEvent(&event)) {
+		if (event.type == SDL_QUIT) {
 			isRunning = false;
-			break;
-
-		default:
-			break;
 		}
-		//按r键附身可互动物品移动-未完成
-		/*if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r) {
-			player->Possess(plant);
-			player = plant;
-		}*/
+
+		if (currentState == MENU) {
+			if (startButton->IsClicked(event)) {
+				currentState = PLAYING;
+			}
+			else if (settingsButton->IsClicked(event)) {
+				// 处理设置按钮点击事件
+			}
+			else if (quitButton->IsClicked(event)) {
+				isRunning = false;
+			}
+		}
+		else if (currentState == PLAYING) {
+			const Uint8* state = SDL_GetKeyboardState(NULL);
+			if (state[SDL_SCANCODE_A]) {
+				player->Move(2);  // 向左移动
+			}
+			if (state[SDL_SCANCODE_D]) {
+				player->Move(1);  // 向右移动
+			}
+			if (state[SDL_SCANCODE_W]) {
+				player->Move(3);  // 向上移动
+			}
+			if (state[SDL_SCANCODE_S]) {
+				player->Move(4);  // 向下移动
+			}
+			if (state[SDL_SCANCODE_TAB]) {
+				plant->highlight();
+			}
+			else {
+				plant->dehighlight();
+			}
+		}
 	}
 }
+
 void Game::update() {
 	player->Update();
 	plant->Update();
 }
 void Game::render() {
 	SDL_RenderClear(renderer);
-	// this is where to add stuff on render
-	// first rect: source rect; secnd rect: destination rect
-	player->Render();
-	plant->Render();
+	if (currentState == MENU) {
+		startButton->Render();
+		settingsButton->Render();
+		quitButton->Render();
+	}
+	else if (currentState == PLAYING) {
+		player->Render();
+		plant->Render();
+	}
 	SDL_RenderPresent(renderer);
 }
+
 void Game::clean() {
+	delete startButton;
+	delete settingsButton;
+	delete quitButton;
+	delete player;
+	delete plant;
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
-	//cout << "game cleaned" << endl;
 }
