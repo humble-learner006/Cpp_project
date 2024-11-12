@@ -4,22 +4,21 @@
 class map {
 public:
 
-	map();
+	map(const char* path, int x, int y, int w, int h);
 	~map();
 
-	void LoadMap(int arr[1][1]);
+	void setBond(int ml, int mr, int mu, int md);
 	void DrawMap();
+
+	int l, r, u, d;
 
 private:
 
 	SDL_Rect src, dest;
 
 	// more map element
-	SDL_Texture* background;
-	SDL_Texture* bg2;
+	SDL_Texture* tex;
 	//SDL_Texture* door;
 
-	// 自定义宽高？
-	int Map[1][1];
 
 };

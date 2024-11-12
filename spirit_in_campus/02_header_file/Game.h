@@ -23,7 +23,7 @@ public:
 
 	static SDL_Renderer* renderer;
 private:
-	enum GameState { MENU, PLAYING };
+	enum GameState { MENU, PLAYING, SCENE1 };
 	GameState currentState;
 
 	bool isRunning;

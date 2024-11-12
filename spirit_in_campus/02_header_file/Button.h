@@ -33,11 +33,14 @@ private:
 // Label class
 class Label {
 public:
-    Label(const std::string& text, int x, int y, int w, int h, SDL_Renderer* renderer);
+    Label(const std::string& text, int windowWidth, int windowHeight, int h, SDL_Renderer* renderer);
     ~Label();
+    void Update(Uint32 currentTime);
+    void SkipToNextSegment();
+    void HandleEvent(const SDL_Event& event);
 
     void Render();
-    void SetText(const std::string& newText, SDL_Color textColor);
+    void SetText(const std::string& newText);
 
 private:
     SDL_Rect rect;
@@ -46,6 +49,10 @@ private:
     std::string text;
     int textureWidth;
     int textureHeight;
+    int lastUpdateTime = 0;
+    int updateInterval = 50;
+    int currentIndex = 0;
+    std::string displayText = "";
 
     SDL_Texture* CreateTextTexture(const std::string& text, SDL_Renderer* renderer);
 };

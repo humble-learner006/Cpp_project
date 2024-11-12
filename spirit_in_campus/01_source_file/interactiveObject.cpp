@@ -8,7 +8,7 @@ interactiveObject::interactiveObject(const char* texturesheet, const char* outli
 	outline = TextureManager::LoadTexture(outlineTexture);
 }
 interactiveObject::~interactiveObject() {
-	SDL_DestroyTexture(outline);
+
 }
 
 void interactiveObject::highlight() {

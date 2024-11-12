@@ -10,11 +10,13 @@ GameObject::GameObject(const char* texturesheet, int x, int y, int w, int h) {
 
 	xpos = x;
 	ypos = y;
+	width = w;
+	height = h;
 
 	srcRect.x = 0;
 	srcRect.y = 0;
-	srcRect.h = h;
-	srcRect.w = w;
+	srcRect.h = height;
+	srcRect.w = width;
 }
 
 int GameObject::GetX() {
@@ -52,25 +54,21 @@ void GameObject::Update() {
 
 }
 // 人物移动测试中
-void GameObject::Move(int direction) {
-	int speed = 10;
+void GameObject::Move(int speedx, int speedy, const map* gameMap) {
+	xpos += speedx;
+	ypos += speedy;
 
-	switch (direction)
-	{
-	case 1:
-		xpos += speed;
-		break;
-	case 2:
-		xpos -= speed;
-		break;
-	case 3:
-		ypos -= speed;
-		break;
-	case 4:
-		ypos += speed;
-		break;
-	default:
-		break;
+	if (xpos < gameMap->l) {
+		xpos = gameMap->l;
+	}
+	if (xpos > gameMap->r) {
+		xpos = gameMap->r;
+	}
+	if (ypos < gameMap->u) {
+		ypos = gameMap->u;
+	}
+	if (ypos > gameMap->d) {
+		ypos = gameMap->d;
 	}
 }
 

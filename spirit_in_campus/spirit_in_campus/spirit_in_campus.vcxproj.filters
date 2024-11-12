@@ -42,6 +42,9 @@
     <ClCompile Include="..\01_source_file\map.cpp">
       <Filter>Source Files\source_file</Filter>
     </ClCompile>
+    <ClCompile Include="..\01_source_file\Button.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\02_header_file\Game.h">
@@ -62,6 +65,18 @@
     <ClInclude Include="..\02_header_file\map.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
+    <ClInclude Include="..\02_header_file\Button.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\ECS.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\Components.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\SceneManager.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\00_Asset\bunny_grass.png">
@@ -73,5 +88,9 @@
     <Image Include="..\00_Asset\sprite.png">
       <Filter>Resource Files\Assest</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\00_Asset\arial.ttf" />
+    <Font Include="..\00_Asset\GOUDYSTO.TTF" />
   </ItemGroup>
 </Project>

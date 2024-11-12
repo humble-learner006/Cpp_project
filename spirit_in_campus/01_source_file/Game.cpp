@@ -7,14 +7,12 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "interactiveObject.h"
-#include "map.h"
-
-using namespace std;
 
 GameObject* player;
 GameObject* tmp;
 interactiveObject* plant;
-map* Map;
+map* scene_music;
+Label* label;
 
 SDL_Renderer* Game::renderer = nullptr;
 
@@ -57,10 +55,13 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	player = new GameObject("../00_Asset/spirit.png", 0, 300, 320, 320);
 	player->animation(true, 7, 150);
-	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  200, 300, 200, 200);
+	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  1000, 500, 200, 200);
 	tmp = new GameObject("", 0, 300, 320, 320);
 
-	Map = new map();
+	scene_music = new map("../00_Asset/scene1_music.png",0, 0, 1536, 1024);
+	scene_music->setBond(0, 1200, 150, 700);
+
+	label = new Label("testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttestte", 1536, 1024, 300, renderer);
 }
 
 void Game::handleEvent() {
@@ -69,17 +70,17 @@ void Game::handleEvent() {
 	const Uint8* state = SDL_GetKeyboardState(NULL);
 
 	if (currentState == PLAYING){
-			if (state[SDL_SCANCODE_A]) {
-			player->Move(2);  // �����ƶ�
+		if (state[SDL_SCANCODE_A]) {
+			player->Move(-10, 0, scene_music);  // �����ƶ�
 		}
 		if (state[SDL_SCANCODE_D]) {
-			player->Move(1);  // �����ƶ�
+			player->Move(10, 0, scene_music);  // �����ƶ�
 		}
 		if (state[SDL_SCANCODE_W]) {
-			player->Move(3);  // �����ƶ�
+			player->Move(0, -10, scene_music);  // �����ƶ�
 		}
 		if (state[SDL_SCANCODE_S]) {
-			player->Move(4);  // �����ƶ�
+			player->Move(0, 10, scene_music);  // �����ƶ�
 		}
 		if (state[SDL_SCANCODE_TAB]) {
 			plant->highlight();
@@ -93,29 +94,13 @@ void Game::handleEvent() {
 
 	// SDL_Event contains one of any sub-event(the union of sub-event)
 	SDL_Event event;
-	// pull the first event from the queue. copying the value into a parameter of type SDL_Event
-	// retuen 0 if event queue is empty
-	/* SDL_PollEvent common use
-	* -------------------------
-	*	SDL_Event ev;
-		bool running = true;
-
-		// Main loop
-		while ( running ) {
-			// Event loop
-			while ( SDL_PolLEvent( &ev )) {
-				// Test members of ev
-			}
-
-			// Wait before next frame
-			SDL_Delay(100);
-		}
-	*
-	*/
+	
 	while (SDL_PollEvent(&event)) {
 		if (event.type == SDL_QUIT) {
 			isRunning = false;
 		}
+
+		label->HandleEvent(event);
 
 		if (currentState == MENU) {
 			if (startButton->IsClicked(event)) {
@@ -151,9 +136,14 @@ void Game::handleEvent() {
 	}
 }
 void Game::update() {
-	player->Update();
-	tmp->Update();
-	plant->Update();
+	Uint32 currentTime = SDL_GetTicks();
+
+	if (currentState == PLAYING) {
+		player->Update();
+		tmp->Update();
+		plant->Update();
+		label->Update(currentTime);
+	}
 }
 void Game::render() {
 	SDL_RenderClear(renderer);
@@ -163,9 +153,10 @@ void Game::render() {
 		quitButton->Render();
 	}
 	else if (currentState == PLAYING) {
-		Map->DrawMap();
+		scene_music->DrawMap();
 		player->Render();
 		plant->Render();
+		label->Render();
 	}
 	SDL_RenderPresent(renderer);
 }
@@ -175,7 +166,6 @@ void Game::clean() {
 	delete settingsButton;
 	delete quitButton;
 	delete player;
-	delete plant;
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
