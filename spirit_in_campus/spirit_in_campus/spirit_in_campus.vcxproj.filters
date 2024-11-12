@@ -39,6 +39,9 @@
     <ClCompile Include="..\01_source_file\Game.cpp">
       <Filter>Source Files\source_file</Filter>
     </ClCompile>
+    <ClCompile Include="..\01_source_file\map.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\02_header_file\Game.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
     <ClInclude Include="..\02_header_file\common.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\map.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
   </ItemGroup>

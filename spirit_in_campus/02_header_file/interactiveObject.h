@@ -5,7 +5,7 @@
 class interactiveObject :public GameObject
 {
 public:
-	interactiveObject(const char* texturesheet, const char* outlineTexture, SDL_Renderer* ren, int x, int y, int w, int h);
+	interactiveObject(const char* texturesheet, const char* outlineTexture, int x, int y, int w, int h);
 	~interactiveObject();
 	void highlight();
 	void dehighlight();

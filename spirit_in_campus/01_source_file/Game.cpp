@@ -10,7 +10,12 @@
 using namespace std;
 
 GameObject* player;
+GameObject* tmp;
 interactiveObject* plant;
+
+SDL_Renderer* Game::renderer = nullptr;
+
+bool isPossess = false;
 
 Game::Game() {
 
@@ -34,11 +39,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			//cout << "Window created!" << endl;
 		}
 
-		renderer = SDL_CreateRenderer(window, -1, 0);
-		if (renderer) {
-			SDL_SetRenderDrawColor(renderer, 102, 102, 255, 0);
-			//cout << "Renderer created" << endl;
-		}
+		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+
 		isRunning = true;
 	}
 	else
@@ -46,9 +48,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		isRunning = false;
 	}
 
-	player = new GameObject("../00_Asset/sprite.png", renderer, 0, 300, 64, 64);
-	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png", renderer, 200, 300, 200, 200);
-
+	player = new GameObject("../00_Asset/spirit.png", 0, 300, 320, 320);
+	player->animation(true, 7, 150);
+	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  200, 300, 200, 200);
+	tmp = new GameObject("", 0, 300, 320, 320);
 }
 
 void Game::handleEvent() {
@@ -109,14 +112,24 @@ void Game::handleEvent() {
 			break;
 		}
 		//按r键附身可互动物品移动-未完成
-		/*if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r) {
-			player->Possess(plant);
-			player = plant;
-		}*/
+		if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r) {
+			if (!isPossess) {
+				isPossess = true;
+				tmp = player;
+				player = plant;
+			}
+			else
+			{	
+				isPossess = false;
+				player = tmp;
+			}
+			
+		}
 	}
 }
 void Game::update() {
 	player->Update();
+	tmp->Update();
 	plant->Update();
 }
 void Game::render() {
@@ -125,6 +138,7 @@ void Game::render() {
 	// first rect: source rect; secnd rect: destination rect
 	player->Render();
 	plant->Render();
+
 	SDL_RenderPresent(renderer);
 }
 void Game::clean() {
