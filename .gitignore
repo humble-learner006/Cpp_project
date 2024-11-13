@@ -15,6 +15,7 @@
 
 
 # Ignore build results
+Debug/  
 Release/
 
 # Ignore temporary files
