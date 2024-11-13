@@ -22,3 +22,4 @@ Release/
 *.tmp
 *.temp
 
+/spirit_in_campus/.vs
