@@ -16,8 +16,6 @@
 # Ignore build results
 Debug/
 Release/
-x64/
-!../spirit_in_campus/03_SDL2/SDL2-2.30.8_VC/lib/x64
 
 # Ignore temporary files
 *.tmp
