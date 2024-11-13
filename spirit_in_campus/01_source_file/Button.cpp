@@ -90,6 +90,7 @@ Label::~Label() {
 }
 
 void Label::Render() {
+
     // äÖÈ¾¶Ô»°¿ò±³¾°
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // °×É«±³¾°
     SDL_RenderFillRect(renderer, &rect);
@@ -126,7 +127,15 @@ void Label::SkipToNextSegment() {
 
 void Label::HandleEvent(const SDL_Event& event) {
     if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_SPACE) {
-        SkipToNextSegment();
+        if (!complete) {
+            SkipToNextSegment();
+            complete = true;
+        }
+        else
+        {
+            SDL_DestroyTexture(texture);
+            rect.w = rect.h = 0;
+        }
     }
 }
 

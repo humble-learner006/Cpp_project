@@ -61,7 +61,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	scene_music = new map("../00_Asset/scene1_music.png",0, 0, 1536, 1024);
 	scene_music->setBond(0, 1200, 150, 700);
 
-	label = new Label("testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttestte", 1536, 1024, 300, renderer);
+	label = new Label("Press space to skip the dialog and close the text block.", 1536, 1024, 300, renderer);
 }
 
 void Game::handleEvent() {
@@ -127,12 +127,7 @@ void Game::handleEvent() {
 			}
 			
 		}
-	\
-		//��r�������ɻ�����Ʒ�ƶ�-δ���
-		/*if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r) {
-			player->Possess(plant);
-			player = plant;
-		}*/
+		
 	}
 }
 void Game::update() {

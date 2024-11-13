@@ -47,6 +47,8 @@ private:
     SDL_Renderer* renderer;
     SDL_Texture* texture;
     std::string text;
+
+    bool complete = false;
     int textureWidth;
     int textureHeight;
     int lastUpdateTime = 0;

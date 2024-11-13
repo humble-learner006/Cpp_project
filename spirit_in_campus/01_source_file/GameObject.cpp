@@ -73,7 +73,7 @@ void GameObject::Move(int speedx, int speedy, const map* gameMap) {
 }
 
 void GameObject::Render() {
-	SDL_RenderCopy(Game::renderer, objTexture, &srcRect, &destRect);
+	TextureManager::Draw(objTexture, srcRect, destRect);
 }
 
 GameObject::~GameObject() {
