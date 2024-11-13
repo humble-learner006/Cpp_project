@@ -16,7 +16,6 @@
 # Ignore build results
 Debug/
 Release/
-x64/
 
 # Ignore temporary files
 *.tmp

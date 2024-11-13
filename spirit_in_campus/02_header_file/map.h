@@ -7,7 +7,7 @@ public:
 	map();
 	~map();
 
-	void LoadMap(int arr[32][48]);
+	void LoadMap(int arr[1][1]);
 	void DrawMap();
 
 private:
@@ -16,9 +16,10 @@ private:
 
 	// more map element
 	SDL_Texture* background;
+	SDL_Texture* bg2;
 	//SDL_Texture* door;
 
 	// 自定义宽高？
-	int Map[32][48];
+	int Map[1][1];
 
 };
