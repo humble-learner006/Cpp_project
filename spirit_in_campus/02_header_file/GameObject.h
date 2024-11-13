@@ -27,6 +27,7 @@ public:
 	int GetY();
 	int GetWidth();
 	int GetHeight();
+	int GetDistance(GameObject *a, GameObject *b);
 
 	SDL_Texture* objTexture;
 

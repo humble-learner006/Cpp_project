@@ -8,6 +8,18 @@
  * 6. Clean up
 */
 
+//TODO
+/*
+1. resize of window
+2. resorce management (maybe will have a list of all object(entity) in one scene)
+3. Possession and distance (which to possess?)
+4. Dialog and text block (beatify and have avatar)
+5. Scene transition (how to change the scene)
+6. Sound effect (how to play the sound effect) event driven
+7. front and back? (how to decide which one is in front of the other)
+8. location of object (need explanation)
+*/
+
 #include "Game.h"
 #include "Button.h"
 #include "TextureManager.h"
@@ -16,6 +28,7 @@
 
 GameObject* player;
 GameObject* tmp;
+interactiveObject* instrument1;
 interactiveObject* plant;
 map* scene_music;
 Label* label;
@@ -61,6 +74,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	player = new GameObject("../00_Asset/spirit.png", 0, 300, 320, 320);
 	player->animation(true, 7, 150);
 	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  1000, 500, 200, 200);
+	instrument1 = new interactiveObject("../00_Asset/instrument1.png", "../00_Asset/instrument1_outline.png", 500, 500, 200, 200);
 	tmp = new GameObject("", 0, 300, 320, 320);
 
 	scene_music = new map("../00_Asset/scene1_music.png",0, 0, 1536, 1024);
@@ -105,7 +119,7 @@ void Game::handleEvent() {
 				currentState = PLAYING;
 			}
 			else if (settingsButton->IsClicked(event)) {
-				// TODO: setting screen
+				// TODO: setting screen (PAUSE MENUE)
 			}
 			else if (quitButton->IsClicked(event)) {
 				isRunning = false;
@@ -115,12 +129,18 @@ void Game::handleEvent() {
 		if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r) {
 			if (!isPossess) {
 				isPossess = true;
+				//TODO: how to decide which one to possess?
+				/*step1: find nearest interactive object
+				  step2: decide whether the distance is smaller than 100
+				  step3: tmp = player, player = nearest interactive object
+				*/
 				tmp = player;
-				player = plant;
+				player = instrument1;
 			}
 			else
 			{	
 				isPossess = false;
+				//*tmp -> GetX = *instrument1 -> GetX -=30; TODO: CALCULATE the position of the player AFTER POSSESION
 				player = tmp;
 			}
 			
@@ -136,6 +156,7 @@ void Game::update() {
 		player->Update();
 		tmp->Update();
 		plant->Update();
+		instrument1 -> Update();
 		label->Update(currentTime);
 	}
 }
@@ -152,6 +173,7 @@ void Game::render() {
 		scene_music->DrawMap();
 		player->Render();
 		plant->Render();
+		instrument1->Render();
 		label->Render();
 	}
 	SDL_RenderPresent(renderer);

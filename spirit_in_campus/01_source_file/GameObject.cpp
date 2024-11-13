@@ -34,6 +34,12 @@ int GameObject::GetHeight() {
 	return srcRect.h;
 }
 
+int GameObject::GetDistance(GameObject *a, GameObject *b) {
+    int dx = a->xpos - b->xpos;
+    int dy = a->ypos - b->ypos;
+    return static_cast<int>(SDL_sqrt(dx * dx + dy * dy));
+}
+
 void GameObject::animation(bool isani, int nframe, int mspeed) {
 	isanimated = isani;
 	frame = nframe;
