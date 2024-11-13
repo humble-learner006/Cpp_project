@@ -9,15 +9,15 @@
 
 using namespace std;
 
-GameObject* player;
-GameObject* tmp;
-interactiveObject* plant;
+GameObject* player; // 创建玩家
+GameObject* tmp;	// 用于存储玩家，脱离附身状态时候回到temp的位置
+interactiveObject* plant; //可互动物品，此处用plant作为例子
 
-SDL_Renderer* Game::renderer = nullptr;
+SDL_Renderer* Game::renderer = nullptr; // 初始化renderer为nullptr
 
-bool isPossess = false;
+bool isPossess = false; // 是否附身
 
-Game::Game() {
+Game::Game() { 
 
 }
 Game::~Game() {
@@ -26,7 +26,7 @@ Game::~Game() {
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flags = 0;
-	// 初始化时可选择是否全屏
+	// 初始化时可选择是否全屏，你需要在main中修改
 	if (fullscreen) {
 		flags = SDL_WINDOW_FULLSCREEN;
 	}
@@ -48,14 +48,14 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		isRunning = false;
 	}
 
-	player = new GameObject("../00_Asset/spirit.png", 0, 300, 320, 320);
-	player->animation(true, 7, 150);
+	player = new GameObject("../00_Asset/spirit.png", 0, 300, 320, 320); //创建玩家，读取序列帧 *所有会动的东西都是一张序列帧，而不是单张帧图片
+	player->animation(true, 7, 150); //只有7帧，每帧150ms，传入序列帧图片
 	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  200, 300, 200, 200);
 	tmp = new GameObject("", 0, 300, 320, 320);
 }
 
 void Game::handleEvent() {
-	//键盘控制移动优化，现在很丝滑
+	// 键盘控制移动优化，现在很丝滑，所有的玩家操作都在handleEvent中处理
 	// SDL_GetKeyboardState处理连续响应按键，每帧都获取按键状态
 	const Uint8* state = SDL_GetKeyboardState(NULL);
 

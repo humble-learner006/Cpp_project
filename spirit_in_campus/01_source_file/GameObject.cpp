@@ -41,8 +41,8 @@ void GameObject::animation(bool isani, int nframe, int mspeed) {
 
 void GameObject::Update() {
 
-	if (isanimated) {
-		srcRect.x = srcRect.w * static_cast<int>((SDL_GetTicks() / speed) % frame);
+	if (isanimated) { //如果是动画
+		srcRect.x = srcRect.w * static_cast<int>((SDL_GetTicks() / speed) % frame); //动画帧数控制
 	}
 
 	destRect.x = xpos;
@@ -51,7 +51,7 @@ void GameObject::Update() {
 	destRect.h = srcRect.h;
 
 }
-// 人物移动测试中
+
 void GameObject::Move(int direction) {
 	int speed = 10;
 
