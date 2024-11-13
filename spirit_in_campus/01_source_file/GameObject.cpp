@@ -43,8 +43,8 @@ void GameObject::animation(bool isani, int nframe, int mspeed) {
 
 void GameObject::Update() {
 
-	if (isanimated) {
-		srcRect.x = srcRect.w * static_cast<int>((SDL_GetTicks() / speed) % frame);
+	if (isanimated) { //ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½ï¿½
+		srcRect.x = srcRect.w * static_cast<int>((SDL_GetTicks() / speed) % frame); //ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	destRect.x = xpos;
@@ -53,7 +53,7 @@ void GameObject::Update() {
 	destRect.h = srcRect.h;
 
 }
-// ÈËÎïÒÆ¶¯²âÊÔÖÐ
+// ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void GameObject::Move(int speedx, int speedy, const map* gameMap) {
 	xpos += speedx;
 	ypos += speedy;
