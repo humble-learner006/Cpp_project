@@ -1,4 +1,6 @@
-
+/*
+	This is for generating the map
+*/
 #include "Game.h"
 
 class map {

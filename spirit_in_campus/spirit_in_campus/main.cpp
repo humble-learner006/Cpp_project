@@ -1,3 +1,6 @@
+/*
+	Where game starts, do not change for now 2024.11.13
+*/
 #include "SDL.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -8,7 +11,7 @@
 Game* game = nullptr;
 
 int main(int argc, char* argv[]) {
-	// Ö¡ÂÊÏŞÖÆ
+	// Frame limitation
 	const int FPS = 60;
 	const int frameDelay = 1000 / FPS;
 
@@ -17,7 +20,7 @@ int main(int argc, char* argv[]) {
 
 	game = new Game();
 
-	game->init("DEMO", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1536, 1024, false);
+	game->init("DEMO", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1500, 1024, false);
 
 	// e->a = (*e).a
 	while (game->running()) {

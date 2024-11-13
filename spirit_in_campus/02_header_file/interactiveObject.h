@@ -1,3 +1,7 @@
+/*
+	interactiveObject is to highlight the object
+	(flowerpot)
+*/
 #pragma once
 #include "Game.h"
 #include "GameObject.h"
