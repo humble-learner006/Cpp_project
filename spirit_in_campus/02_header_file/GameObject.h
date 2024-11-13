@@ -1,3 +1,8 @@
+/*
+	GameObject is for moving the player(spirit),
+	the core part is the implementation of
+	Move method
+*/
 #pragma once
 #include "Game.h"
 #include "map.h"
@@ -14,7 +19,8 @@ public:
 
 	void Update();
 	void Render();
-	// 键盘控制玩家移动，可能后面会新建子类？
+
+	// Control player's movement
 	void Move(int speeds, int speedy, const map* gameMap);
 
 	int GetX();

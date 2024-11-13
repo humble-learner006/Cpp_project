@@ -1,5 +1,11 @@
-/* ��Ϸ��ѭ�����ݿ���
-* ���о���Ķ��������﷢��
+/*
+ * Game loop implementation
+ * 1. Initialize the game
+ * 2. Check whether the game is running (MENU PLAYING SCENE1)
+ * 3. Handle player's events keyboard/mouse
+ * 4. Update postions of moving objects
+ * 5. Render objects occur on the screen
+ * 6. Clean up
 */
 
 #include "Game.h"
@@ -27,11 +33,11 @@ Game::~Game() {
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flags = 0;
-	// ��ʼ��ʱ��ѡ���Ƿ�ȫ��
+	// Choose whether have fullscreen or not
 	if (fullscreen) {
 		flags = SDL_WINDOW_FULLSCREEN;
 	}
-	// ȷ��SDL�Ƿ�ɹ���ʼ������������
+	// Check Initialization of SDL and generate the window
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 		//cout << "Subsystems Initialized!..." << endl;
 
@@ -39,9 +45,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		if (window) {
 			//cout << "Window created!" << endl;
 		}
-
 		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-
 		isRunning = true;
 	}
 	else
@@ -49,6 +53,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		isRunning = false;
 	}
 
+	// Specific object initialization
 	startButton = new Button("Begin", 100, 100, 200, 50, renderer);
 	settingsButton = new Button("Settings", 100, 200, 200, 50, renderer);
 	quitButton = new Button("Exit", 100, 300, 200, 50, renderer);
@@ -63,24 +68,22 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	label = new Label("Press space to skip the dialog and close the text block.", 1536, 1024, 300, renderer);
 }
-
+// Handle player's events keyboard/mouse
 void Game::handleEvent() {
-	//���̿����ƶ��Ż������ں�˿��
-	// SDL_GetKeyboardState����������Ӧ������ÿ֡����ȡ����״̬
+	// Player moving
 	const Uint8* state = SDL_GetKeyboardState(NULL);
-
 	if (currentState == PLAYING){
 		if (state[SDL_SCANCODE_A]) {
-			player->Move(-10, 0, scene_music);  // �����ƶ�
+			player->Move(-10, 0, scene_music);
 		}
 		if (state[SDL_SCANCODE_D]) {
-			player->Move(10, 0, scene_music);  // �����ƶ�
+			player->Move(10, 0, scene_music); 
 		}
 		if (state[SDL_SCANCODE_W]) {
-			player->Move(0, -10, scene_music);  // �����ƶ�
+			player->Move(0, -10, scene_music);
 		}
 		if (state[SDL_SCANCODE_S]) {
-			player->Move(0, 10, scene_music);  // �����ƶ�
+			player->Move(0, 10, scene_music);
 		}
 		if (state[SDL_SCANCODE_TAB]) {
 			plant->highlight();
@@ -90,30 +93,25 @@ void Game::handleEvent() {
 			plant->dehighlight();
 		}
 	}
-
-
-	// SDL_Event contains one of any sub-event(the union of sub-event)
+	// Button, Label, Possesion
 	SDL_Event event;
-	
 	while (SDL_PollEvent(&event)) {
 		if (event.type == SDL_QUIT) {
 			isRunning = false;
 		}
-
 		label->HandleEvent(event);
-
 		if (currentState == MENU) {
 			if (startButton->IsClicked(event)) {
 				currentState = PLAYING;
 			}
 			else if (settingsButton->IsClicked(event)) {
-				// �������ð�ť����¼�
+				// TODO: setting screen
 			}
 			else if (quitButton->IsClicked(event)) {
 				isRunning = false;
 			}
 		}
-
+		// Possesion checking
 		if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r) {
 			if (!isPossess) {
 				isPossess = true;
@@ -130,9 +128,10 @@ void Game::handleEvent() {
 		
 	}
 }
+
+// Update postions of moving objects
 void Game::update() {
 	Uint32 currentTime = SDL_GetTicks();
-
 	if (currentState == PLAYING) {
 		player->Update();
 		tmp->Update();
@@ -140,6 +139,8 @@ void Game::update() {
 		label->Update(currentTime);
 	}
 }
+
+// Render objects occur on the screen
 void Game::render() {
 	SDL_RenderClear(renderer);
 	if (currentState == MENU) {
@@ -156,6 +157,7 @@ void Game::render() {
 	SDL_RenderPresent(renderer);
 }
 
+// Render objects occur on the screen
 void Game::clean() {
 	delete startButton;
 	delete settingsButton;

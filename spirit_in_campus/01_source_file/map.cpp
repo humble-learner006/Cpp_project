@@ -12,6 +12,7 @@ map::map(const char* path, int x, int y, int w, int h) {
 	dest.x = dest.y = 0;
 }
 
+// Set bond of the map
 void map::setBond(int ml, int mr, int mu, int md)
 {
 	l = ml;
@@ -19,7 +20,7 @@ void map::setBond(int ml, int mr, int mu, int md)
 	u = mu;
 	d = md;
 }
-
+// Draw the map
 void map::DrawMap() {
 	TextureManager::Draw(tex, src, dest);
 }

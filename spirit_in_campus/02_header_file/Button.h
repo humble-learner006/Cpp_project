@@ -1,6 +1,14 @@
+/*
+    This Button.h implement two classes, Button and Label.
+    Button class is for interaction with mouse click:
+    1. Button render
+    2, Check whether the button is clicked
+    Label class is for showing dialog box:
+    1. Label render
+    2. User can immediately get full texts and close the dialog box
+*/
 #ifndef BUTTON_H
 #define BUTTON_H
-
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <string>
