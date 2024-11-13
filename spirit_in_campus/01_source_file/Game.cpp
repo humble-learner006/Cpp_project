@@ -142,6 +142,7 @@ void Game::update() {
 }
 void Game::render() {
 	SDL_RenderClear(renderer);
+
 	if (currentState == MENU) {
 		startButton->Render();
 		settingsButton->Render();

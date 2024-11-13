@@ -14,7 +14,7 @@ public:
 
 	void Update();
 	void Render();
-	// 键盘控制玩家移动，可能后面会新建子类？
+
 	void Move(int speeds, int speedy, const map* gameMap);
 
 	int GetX();

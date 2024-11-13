@@ -9,7 +9,8 @@ map::map(const char* path, int x, int y, int w, int h) {
 	src.w = dest.w = w;
 	src.h = dest.h = h;
 
-	dest.x = dest.y = 0;
+	dest.x = src.x;
+	dest.y = src.y;
 }
 
 void map::setBond(int ml, int mr, int mu, int md)
