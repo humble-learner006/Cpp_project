@@ -12,6 +12,7 @@
 *.tlog
 *.lastbuildstate
 *.log
+*.obj
 
 
 # Ignore build results

@@ -140,8 +140,8 @@
     <ClCompile Include="..\01_source_file\Button.cpp" />
     <ClCompile Include="..\01_source_file\Game.cpp" />
     <ClCompile Include="..\01_source_file\GameObject.cpp" />
-    <ClCompile Include="..\01_source_file\interactiveObject.cpp" />
     <ClCompile Include="..\01_source_file\map.cpp" />
+    <ClCompile Include="..\01_source_file\SceneManager.cpp" />
     <ClCompile Include="..\01_source_file\TextureManager.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -152,7 +152,6 @@
     <ClInclude Include="..\02_header_file\ECS.h" />
     <ClInclude Include="..\02_header_file\Game.h" />
     <ClInclude Include="..\02_header_file\GameObject.h" />
-    <ClInclude Include="..\02_header_file\interactiveObject.h" />
     <ClInclude Include="..\02_header_file\map.h" />
     <ClInclude Include="..\02_header_file\SceneManager.h" />
     <ClInclude Include="..\02_header_file\TextureManager.h" />

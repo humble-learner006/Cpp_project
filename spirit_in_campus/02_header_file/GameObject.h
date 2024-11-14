@@ -7,13 +7,15 @@
 #include "Game.h"
 #include "map.h"
 
-class interactiveObject;
-
 class GameObject
 {
 public:
 	GameObject(const char* texturesheet, int x, int y, int w, int h);
+	GameObject(const char* texturesheet, const char* outlineTexture, int x, int y, int w, int h);
 	~GameObject();
+
+	void highlight();
+	void dehighlight();
 
 	void animation(bool isani, int nframe, int mspeed);
 
@@ -30,6 +32,8 @@ public:
 	int GetDistance(GameObject *a, GameObject *b);
 
 	SDL_Texture* objTexture;
+	SDL_Texture* normal;
+	SDL_Texture* outline;
 
 private:
 
@@ -42,6 +46,8 @@ private:
 	
 	int width;
 	int height;
+
+	bool isHighlighted;
 
 	SDL_Rect srcRect, destRect;
 
