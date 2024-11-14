@@ -13,6 +13,7 @@
 #include "SDL.h"
 #include <stdio.h>
 #include "SDL_image.h"
+#include "SDL_mixer.h"
 #include "Button.h"
 
 class Game
@@ -34,6 +35,7 @@ public:
 
 	// Release memory method
 	void clean();
+
 	
 	/* 
 		To check whether the game loop is continuing
@@ -52,7 +54,6 @@ private:
 
 	// Be used in running method
 	bool isRunning;
-
 	SDL_Window* window;
 	Button* startButton;
     Button* settingsButton;
