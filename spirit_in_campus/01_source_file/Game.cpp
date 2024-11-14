@@ -13,11 +13,15 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "interactiveObject.h"
+#include "ArrowEnemy.h"
+
 
 GameObject* player;
 GameObject* tmp;
 interactiveObject* plant;
 map* scene_music;
+//Arrow* arrow;
+ArrowEnemy* arrow_enemy;
 Label* label;
 
 SDL_Renderer* Game::renderer = nullptr;
@@ -61,6 +65,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	player = new GameObject("../00_Asset/spirit.png", 0, 300, 320, 320);
 	player->animation(true, 7, 150);
 	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  1000, 500, 200, 200);
+	arrow_enemy = new ArrowEnemy("../00_Asset/black_cat-Sheet.png", 1000, 500, 64, 64,player);
+	arrow_enemy->animation(true, 4, 150);
+	//arrow = new Arrow("../00_Asset/arrow.png", 0, 0, 320, 320);
 	tmp = new GameObject("", 0, 300, 320, 320);
 
 	scene_music = new map("../00_Asset/scene1_music.png",0, 0, 1536, 1024);
@@ -136,6 +143,8 @@ void Game::update() {
 		player->Update();
 		tmp->Update();
 		plant->Update();
+		arrow_enemy->Update();
+		//arrow->Update();
 		label->Update(currentTime);
 	}
 }
@@ -151,6 +160,8 @@ void Game::render() {
 	else if (currentState == PLAYING) {
 		scene_music->DrawMap();
 		player->Render();
+		arrow_enemy->Render();
+		//arrow->Render();
 		plant->Render();
 		label->Render();
 	}

@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\01_source_file\ArrowEnemy.cpp" />
     <ClCompile Include="..\01_source_file\Button.cpp" />
     <ClCompile Include="..\01_source_file\Game.cpp" />
     <ClCompile Include="..\01_source_file\GameObject.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\02_header_file\ArrowEnemy.h" />
     <ClInclude Include="..\02_header_file\Button.h" />
     <ClInclude Include="..\02_header_file\common.h" />
     <ClInclude Include="..\02_header_file\Components.h" />
