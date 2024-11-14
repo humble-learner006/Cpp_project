@@ -12,7 +12,6 @@
 *.tlog
 *.lastbuildstate
 *.log
-*.obj
 
 
 # Ignore build results
@@ -23,4 +22,3 @@ Release/
 *.tmp
 *.temp
 
-/spirit_in_campus/.vs

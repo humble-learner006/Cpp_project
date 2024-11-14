@@ -1,13 +1,6 @@
 #pragma once
 #include "ResourceManager.h"
 
-Scene1::Scene1()
-{
-}
-
-Scene1::~Scene1()
-{
-}
 
 void Scene1::loadResources(SDL_Renderer* renderer)
 {

@@ -33,8 +33,6 @@ GameObject* plant;
 map* scene_music;
 Label* label;
 
-
-
 SDL_Renderer* Game::renderer = nullptr;
 
 bool isPossess = false;
@@ -62,8 +60,6 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		}
 		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 		isRunning = true;
-
-		
 	}
 	else
 	{
@@ -85,11 +81,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	scene_music->setBond(0, 1200, 150, 700);
 
 	label = new Label("Press space to skip the dialog and close the text block.", 1536, 1024, 300, renderer);
-
-
-	}
 }
-
 // Handle player's events keyboard/mouse
 void Game::handleEvent() {
 	// Player moving
@@ -118,8 +110,6 @@ void Game::handleEvent() {
 	// Button, Label, Possesion
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
-
-		SceneManager::handleEvents();
 
 		if (event.type == SDL_QUIT) {
 			isRunning = false;
@@ -171,7 +161,6 @@ void Game::update() {
 		label->Update(currentTime);
 
 	}
-	SceneManager::update();
 }
 
 // Render objects occur on the screen
@@ -191,7 +180,6 @@ void Game::render() {
 		label->Render();
 	}
 
-	SceneManager::render();
 	SDL_RenderPresent(renderer);
 }
 
@@ -203,6 +191,5 @@ void Game::clean() {
 	delete player;
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
-
 	SDL_Quit();
 }
