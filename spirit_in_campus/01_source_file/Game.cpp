@@ -24,6 +24,7 @@
 #include "Button.h"
 #include "TextureManager.h"
 #include "GameObject.h"
+#include "SceneManager.h"
 
 GameObject* player;
 GameObject* tmp;
@@ -109,6 +110,9 @@ void Game::handleEvent() {
 	// Button, Label, Possesion
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
+
+		SceneManager::handleEvents();
+
 		if (event.type == SDL_QUIT) {
 			isRunning = false;
 		}
@@ -159,6 +163,7 @@ void Game::update() {
 		label->Update(currentTime);
 
 	}
+	SceneManager::update();
 }
 
 // Render objects occur on the screen
@@ -177,6 +182,8 @@ void Game::render() {
 		instrument1->Render();
 		label->Render();
 	}
+
+	SceneManager::render();
 	SDL_RenderPresent(renderer);
 }
 

@@ -137,15 +137,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\01_source_file\AudioManager.cpp" />
     <ClCompile Include="..\01_source_file\Button.cpp" />
     <ClCompile Include="..\01_source_file\Game.cpp" />
     <ClCompile Include="..\01_source_file\GameObject.cpp" />
     <ClCompile Include="..\01_source_file\map.cpp" />
-    <ClCompile Include="..\01_source_file\SceneManager.cpp" />
+    <ClCompile Include="..\01_source_file\ResourceManager.cpp" />
     <ClCompile Include="..\01_source_file\TextureManager.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\02_header_file\AudioManager.hpp" />
     <ClInclude Include="..\02_header_file\Button.h" />
     <ClInclude Include="..\02_header_file\common.h" />
     <ClInclude Include="..\02_header_file\Components.h" />
@@ -153,6 +155,7 @@
     <ClInclude Include="..\02_header_file\Game.h" />
     <ClInclude Include="..\02_header_file\GameObject.h" />
     <ClInclude Include="..\02_header_file\map.h" />
+    <ClInclude Include="..\02_header_file\ResourceManager.h" />
     <ClInclude Include="..\02_header_file\SceneManager.h" />
     <ClInclude Include="..\02_header_file\TextureManager.h" />
   </ItemGroup>

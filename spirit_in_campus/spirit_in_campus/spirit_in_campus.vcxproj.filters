@@ -42,7 +42,10 @@
     <ClCompile Include="..\01_source_file\Button.cpp">
       <Filter>Source Files\source_file</Filter>
     </ClCompile>
-    <ClCompile Include="..\01_source_file\SceneManager.cpp">
+    <ClCompile Include="..\01_source_file\ResourceManager.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\01_source_file\AudioManager.cpp">
       <Filter>Source Files\source_file</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,8 +74,14 @@
     <ClInclude Include="..\02_header_file\Components.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
-    <ClInclude Include="..\02_header_file\SceneManager.h">
+    <ClInclude Include="..\02_header_file\ResourceManager.h">
       <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\AudioManager.hpp">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\SceneManager.h">
+      <Filter>Source Files\source_file</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

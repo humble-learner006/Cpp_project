@@ -8,6 +8,8 @@
 #include "SDL_main.h"
 #include "Game.h"
 
+#include "AudioManager.hpp"
+
 Game* game = nullptr;
 
 int main(int argc, char* argv[]) {
@@ -22,6 +24,16 @@ int main(int argc, char* argv[]) {
 
 	game->init("DEMO", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1500, 1024, false);
 
+	AudioManager audioManager;
+	if (!audioManager.init()) {
+		SDL_Log("Failed to initialize AudioManager");
+		return -1;
+	}
+
+	// ¼ÓÔØÒôÆµÎÄ¼ş
+	audioManager.loadMusic("background", "../00_Asset/Nighttime-Escape_v001.mp3");
+	audioManager.playMusic("background");
+	
 	// e->a = (*e).a
 	while (game->running()) {
 
