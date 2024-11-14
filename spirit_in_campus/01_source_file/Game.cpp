@@ -24,12 +24,11 @@
 #include "Button.h"
 #include "TextureManager.h"
 #include "GameObject.h"
-#include "interactiveObject.h"
 
 GameObject* player;
 GameObject* tmp;
-interactiveObject* instrument1;
-interactiveObject* plant;
+GameObject* instrument1;
+GameObject* plant;
 map* scene_music;
 Label* label;
 
@@ -73,8 +72,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	player = new GameObject("../00_Asset/spirit.png", 0, 300, 320, 320);
 	player->animation(true, 7, 150);
-	plant = new interactiveObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  1000, 500, 200, 200);
-	instrument1 = new interactiveObject("../00_Asset/instrument1.png", "../00_Asset/instrument1_outline.png", 500, 500, 200, 200);
+	plant = new GameObject("../00_Asset/bunny_grass.png", "../00_Asset/bunny_outline.png",  1000, 500, 200, 200);
+	instrument1 = new GameObject("../00_Asset/instrument1.png", "../00_Asset/instrument1_outline.png", 500, 500, 200, 200);
 	tmp = new GameObject("", 0, 300, 320, 320);
 
 	scene_music = new map("../00_Asset/scene1_music.png",0, 0, 1536, 1024);
@@ -158,6 +157,7 @@ void Game::update() {
 		plant->Update();
 		instrument1 -> Update();
 		label->Update(currentTime);
+
 	}
 }
 

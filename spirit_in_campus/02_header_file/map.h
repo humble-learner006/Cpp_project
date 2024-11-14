@@ -1,6 +1,7 @@
 /*
 	This is for generating the map
 */
+#pragma once
 #include "Game.h"
 
 class map {
