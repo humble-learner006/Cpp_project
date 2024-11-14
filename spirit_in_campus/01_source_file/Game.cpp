@@ -172,6 +172,7 @@ void Game::update() {
 // Render objects occur on the screen
 void Game::render() {
 	SDL_RenderClear(renderer);
+
 	if (currentState == MENU) {
 		startButton->Render();
 		settingsButton->Render();
