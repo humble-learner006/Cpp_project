@@ -14,6 +14,8 @@
 #include <stdio.h>
 #include "SDL_image.h"
 #include "Button.h"
+#include "Menu.h"
+#include <iostream>
 
 class Game
 {
@@ -47,15 +49,13 @@ public:
 
 private:
 	// Through different current state, we can do different operations
-	enum GameState { MENU, PLAYING, SCENE1 };
+	enum GameState { MAIN, SETTING, PLAYING, PAUSE, SCENE1};
 	GameState currentState;
+	GameState lastState;
 
 	// Be used in running method
 	bool isRunning;
 
 	SDL_Window* window;
-	Button* startButton;
-    Button* settingsButton;
-    Button* quitButton;
 };
 #endif

@@ -7,6 +7,7 @@
 #include "SDL_ttf.h"
 #include "SDL_main.h"
 #include "Game.h"
+#include "GLOBAL.h"
 
 Game* game = nullptr;
 
@@ -20,7 +21,7 @@ int main(int argc, char* argv[]) {
 
 	game = new Game();
 
-	game->init("DEMO", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1500, 1024, false);
+	game->init("DEMO", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, GAME_WIDTH, GAME_HEIGHT, false);
 
 	// e->a = (*e).a
 	while (game->running()) {

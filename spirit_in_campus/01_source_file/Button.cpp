@@ -2,6 +2,16 @@
 #include <SDL_ttf.h>
 
 // Generate Button
+// Button class
+Button::Button(const std::string& text, int x, int y, int w, int h, SDL_Renderer* renderer)
+    : rect{ x, y, w, h }, renderer(renderer), text(text), status(UI_RELEASED) {
+    texture = CreateTextTexture(text, renderer);
+}
+
+Button::~Button() {
+    SDL_DestroyTexture(texture);
+}
+
 // Helper function to set SDL_Rect
 void SetRect(SDL_Rect* r, int x, int y, int w, int h) {
     r->x = x;
@@ -36,16 +46,6 @@ SDL_Texture* Button::CreateTextTexture(const std::string& text, SDL_Renderer* re
     return texture;
 }
 
-// Button class
-Button::Button(const std::string& text, int x, int y, int w, int h, SDL_Renderer* renderer)
-    : rect{ x, y, w, h }, renderer(renderer), text(text), status(UI_RELEASED) {
-    texture = CreateTextTexture(text, renderer);
-}
-
-Button::~Button() {
-    SDL_DestroyTexture(texture);
-}
-
 // Get change after the user click the button
 void Button::Render() {
     int bright = 200, dark = 100, grey = (bright + dark) / 2;
@@ -56,6 +56,7 @@ void Button::Render() {
 
     if (status == UI_CLICKED) {
         DrawBumpRect(renderer, rect.x, rect.y, rect.x + rect.w, rect.y + rect.h, thick, dark, bright);
+        status = UI_RELEASED;
     }
     else if (status == UI_RELEASED) {
         DrawBumpRect(renderer, rect.x, rect.y, rect.x + rect.w, rect.y + rect.h, thick, bright, dark);

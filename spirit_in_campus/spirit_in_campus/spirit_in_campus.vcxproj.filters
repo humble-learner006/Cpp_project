@@ -45,6 +45,15 @@
     <ClCompile Include="..\01_source_file\Button.cpp">
       <Filter>Source Files\source_file</Filter>
     </ClCompile>
+    <ClCompile Include="..\01_source_file\GLOBAL.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\01_source_file\Menu.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\01_source_file\ArrowEnemy.cpp">
+      <Filter>Source Files\source_file</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\02_header_file\Game.h">
@@ -75,6 +84,15 @@
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
     <ClInclude Include="..\02_header_file\SceneManager.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\GLOBAL.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\Menu.h">
+      <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\ArrowEnemy.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
   </ItemGroup>

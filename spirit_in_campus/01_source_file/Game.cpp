@@ -25,19 +25,33 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "interactiveObject.h"
+#include "GLOBAL.h"
+#include <iostream>
+#include "ArrowEnemy.h"
 
 GameObject* player;
 GameObject* tmp;
 interactiveObject* instrument1;
 interactiveObject* plant;
 map* scene_music;
+map* mainPhoto;
 Label* label;
+Button* startButton;
+Button* settingsButton;
+Button* quitButton;
+Button* esc;
+Button* mainButton;
+Button* settingButton;
+Button* resumeButton;
+Button* volumeButton;
+Button* returnButton;
+ArrowEnemy* arrow_enemy;
 
 SDL_Renderer* Game::renderer = nullptr;
 
 bool isPossess = false;
 
-Game::Game() {
+Game::Game() : currentState(MAIN), lastState(MAIN), isRunning(false), window(nullptr) {
 
 }
 Game::~Game() {
@@ -67,9 +81,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	}
 
 	// Specific object initialization
-	startButton = new Button("Begin", 100, 100, 200, 50, renderer);
+	startButton = new Button("_Start_", 100, 100, 200, 50, renderer);
 	settingsButton = new Button("Settings", 100, 200, 200, 50, renderer);
-	quitButton = new Button("Exit", 100, 300, 200, 50, renderer);
+	quitButton = new Button("_Quit_", 100, 300, 200, 50, renderer);
 
 	player = new GameObject("../00_Asset/spirit.png", 0, 300, 320, 320);
 	player->animation(true, 7, 150);
@@ -77,10 +91,26 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	instrument1 = new interactiveObject("../00_Asset/instrument1.png", "../00_Asset/instrument1_outline.png", 500, 500, 200, 200);
 	tmp = new GameObject("", 0, 300, 320, 320);
 
-	scene_music = new map("../00_Asset/scene1_music.png",0, 0, 1536, 1024);
+	scene_music = new map("../00_Asset/scene1_music.png",0, 0, GAME_WIDTH, GAME_HEIGHT);
 	scene_music->setBond(0, 1200, 150, 700);
 
 	label = new Label("Press space to skip the dialog and close the text block.", 1536, 1024, 300, renderer);
+
+	esc = new Button("ESC", 1300, 40, 100, 50, renderer);
+
+	// Pause menu
+	mainButton = new Button("_Main_", (GAME_WIDTH / 2) - 100, (GAME_HEIGHT / 2) - 30, 200, 50, renderer);
+	settingButton = new Button("Settings", (GAME_WIDTH / 2) - 100, (GAME_HEIGHT / 2) + 25, 200, 50, renderer);
+	resumeButton = new Button("Resume", (GAME_WIDTH / 2) - 100, (GAME_HEIGHT / 2) + 80, 200, 50, renderer);
+
+	// Setting menu
+	volumeButton = new Button("Volume_", (GAME_WIDTH / 2) - 100, (GAME_HEIGHT / 2) + 25, 200, 50, renderer);
+	returnButton = new Button("Return_", (GAME_WIDTH / 2) - 100, (GAME_HEIGHT / 2) + 80, 200, 50, renderer);
+
+	mainPhoto = new map("../00_Asset/GENERAL SCENE1.png", 0, 0, GAME_WIDTH, GAME_HEIGHT);
+
+	// Arrow enemy
+	arrow_enemy = new ArrowEnemy("../00_Asset/black_cat-sheet.png", 1000, 500, 100, 100, player);
 }
 // Handle player's events keyboard/mouse
 void Game::handleEvent() {
@@ -107,6 +137,7 @@ void Game::handleEvent() {
 			plant->dehighlight();
 		}
 	}
+
 	// Button, Label, Possesion
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
@@ -114,17 +145,57 @@ void Game::handleEvent() {
 			isRunning = false;
 		}
 		label->HandleEvent(event);
-		if (currentState == MENU) {
+
+		// Dealing with main menu
+		if (currentState == MAIN) {
 			if (startButton->IsClicked(event)) {
+				lastState = currentState;
 				currentState = PLAYING;
 			}
 			else if (settingsButton->IsClicked(event)) {
-				// TODO: setting screen (PAUSE MENUE)
+				lastState = currentState;
+				currentState = SETTING;
 			}
 			else if (quitButton->IsClicked(event)) {
 				isRunning = false;
 			}
 		}
+		// Dealing with playing state
+		if (currentState == PLAYING) {
+			if (esc->IsClicked(event)) {
+				lastState = currentState;
+				currentState = PAUSE;
+			}
+		}
+
+		// Dealing with pause menu
+		if (currentState == PAUSE) {
+			// TODO: pause screen
+			if (mainButton->IsClicked(event)) {
+				lastState = currentState;
+				currentState = MAIN;
+			}
+			else if (settingButton->IsClicked(event)) {
+				lastState = currentState;
+				currentState = SETTING;
+			}
+			else if (resumeButton->IsClicked(event)) {
+				lastState = currentState;
+				currentState = PLAYING;
+			}
+		}
+
+		// Dealing with setting menu
+		if (currentState == SETTING) {
+			if (volumeButton->IsClicked(event)) {
+				// TODO: volume setting
+				std::cout << "Volume button clicked!" << std::endl;
+			}
+			else if (returnButton->IsClicked(event)) {
+				currentState = lastState;
+			}
+		}
+
 		// Possesion checking
 		if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r) {
 			if (!isPossess) {
@@ -156,7 +227,8 @@ void Game::update() {
 		player->Update();
 		tmp->Update();
 		plant->Update();
-		instrument1 -> Update();
+		instrument1 -> Update();		
+		arrow_enemy->Update();
 		label->Update(currentTime);
 	}
 }
@@ -164,7 +236,8 @@ void Game::update() {
 // Render objects occur on the screen
 void Game::render() {
 	SDL_RenderClear(renderer);
-	if (currentState == MENU) {
+	if (currentState == MAIN) {		
+		mainPhoto->DrawMap();
 		startButton->Render();
 		settingsButton->Render();
 		quitButton->Render();
@@ -173,8 +246,42 @@ void Game::render() {
 		scene_music->DrawMap();
 		player->Render();
 		plant->Render();
+		arrow_enemy->Render();
 		instrument1->Render();
 		label->Render();
+		esc->Render();
+	}
+	else if (currentState == PAUSE) {
+		scene_music->DrawMap();
+		player->Render();
+		plant->Render();
+		instrument1->Render();
+		arrow_enemy->Render();
+		label->Render();
+		esc->Render();
+		mainButton->Render();
+		settingButton->Render();
+		resumeButton->Render();
+
+	}
+	else if (currentState == SETTING) {
+		if (lastState == MAIN) {
+			mainPhoto->DrawMap();
+			startButton->Render();
+			settingsButton->Render();
+			quitButton->Render();
+		}
+		else if (lastState == PAUSE) {
+			scene_music->DrawMap();
+			player->Render();
+			plant->Render();
+			instrument1->Render();
+			arrow_enemy->Render();
+			label->Render();
+			esc->Render();
+		}
+		volumeButton->Render();
+		returnButton->Render();
 	}
 	SDL_RenderPresent(renderer);
 }
