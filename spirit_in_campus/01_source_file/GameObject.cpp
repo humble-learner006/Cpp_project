@@ -18,6 +18,23 @@ GameObject::GameObject(const char* texturesheet, int x, int y, int w, int h) {
 	srcRect.w = width;
 }
 
+GameObject::GameObject(const char* texturesheet, const char* outlineTexture, int x, int y, int w, int h) {
+	isHighlighted = false;
+	objTexture = TextureManager::LoadTexture(texturesheet);
+	normal = objTexture;
+	outline = TextureManager::LoadTexture(outlineTexture);
+
+	xpos = x;
+	ypos = y;
+	width = w;
+	height = h;
+
+	srcRect.x = 0;
+	srcRect.y = 0;
+	srcRect.h = height;
+	srcRect.w = width;
+}
+
 int GameObject::GetX() {
 	return xpos;
 }
@@ -38,6 +55,20 @@ int GameObject::GetDistance(GameObject *a, GameObject *b) {
     int dx = a->xpos - b->xpos;
     int dy = a->ypos - b->ypos;
     return static_cast<int>(SDL_sqrt(dx * dx + dy * dy));
+}
+
+void GameObject::highlight() {
+	if (!isHighlighted) {
+		objTexture = outline;
+		isHighlighted = true;
+	}
+}
+
+void GameObject::dehighlight() {
+	if (isHighlighted) {
+		objTexture = normal;
+		isHighlighted = false;
+	}
 }
 
 void GameObject::animation(bool isani, int nframe, int mspeed) {

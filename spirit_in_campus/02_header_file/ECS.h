@@ -1,4 +1,5 @@
 // Entity Component System
+#pragma once
 
 #include <iostream>
 #include <vector>
@@ -60,7 +61,7 @@ public:
 	void destory() { active = false; }
 
 	template <typename T> bool hasComponent() const {
-		return componentBitset[getComponentypeID<T>];
+		return componentBitset[getComponentTypeID<T>];
 	}
 
 	template <typename T, typename... TArgs>
