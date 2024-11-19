@@ -12,11 +12,21 @@ class Component;
 class Entity;
 
 using ComponentID = std::size_t;
-
-inline ComponentID getComponentTypeID() {
-	static ComponentID lastID = 0;
+// using as a keyword in C++, it is used to give new name to sth. already exist 
+inline ComponentID getComponentTypeID() { //inline <fnc name> get unique ID for components.
+	static ComponentID lastID = 0; //static <type(size_t in std)> identifier, init only once
+	//here init last(newest) ID as zero. Then add it up.
 	return lastID++;
 }
+
+/*
+about inline keyword
+- expand/insert the function inline
+This can improve performance by eliminating the overhead of a function call, but it can also increase the size of the binary.
+By expanding the function inline, the overhead of a function call (such as stack frame setup and teardown) is eliminated.
+This can lead to faster execution, especially for small, frequently called functions.
+defnition closer to implementation
+*/
 
 template <typename T> inline ComponentID getComponentTypeID() noexcept {
 	static ComponentID typeID = getComponentTypeID();
@@ -24,9 +34,14 @@ template <typename T> inline ComponentID getComponentTypeID() noexcept {
 }
 
 constexpr std::size_t maxComponents = 32;
+// constexpre keyword is for claiming the variable that can be sure unchange while compiling 
+// for better performance and stability of program
+// as for static, it is like avoiding initialize again when calling
 
 using ComponentBitSet = std::bitset<maxComponents>;
+// a set to show if component exist or not
 using ComponentArray = std::array<Component*, maxComponents>;
+// a arrary to store the pointer pointing toward components
 
 class Component {
 public: 
@@ -39,6 +54,8 @@ public:
 	virtual ~Component(){}
 };
 
+
+// One entity have lots of component! like position and other stuff.
 class Entity {
 private:
 	bool active = true;
@@ -50,6 +67,7 @@ private:
 public:
 	void update() {
 		for (auto& c : components) c->update();
+		// this is override of update, derive from Class: component (in this, update is virtrual)
 		for (auto& c : components) c->draw();
 	}
 
@@ -60,10 +78,12 @@ public:
 
 	void destory() { active = false; }
 
+// hasComponent
 	template <typename T> bool hasComponent() const {
 		return componentBitset[getComponentTypeID<T>];
 	}
 
+// addComponent
 	template <typename T, typename... TArgs>
 	T& addComponent(TArgs&&... mArgs) {
 		T* c(new T(std::forward<TArgs>(mArgs)...));
@@ -79,6 +99,7 @@ public:
 
 	}
 
+// getComponent
 	template<typename T> T& getComponent() const {
 		auto ptr(componentArray[getComponentTypeID<T>()]);
 		return *static_cast<T*>(ptr);
@@ -86,6 +107,7 @@ public:
 
 };
 
+// keep list of entities
 class Manager {
 private:
 	std::vector<std::unique_ptr<Entity>> entities;
@@ -111,6 +133,7 @@ public:
 			std::end(entities));
 	}
 
+// manager add entity to entity list
 	Entity& addEntity()
 	{
 		Entity* e = new Entity();
