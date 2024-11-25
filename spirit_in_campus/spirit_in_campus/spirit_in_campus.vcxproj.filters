@@ -22,6 +22,9 @@
     <Filter Include="Resource Files\Assest">
       <UniqueIdentifier>{ad9e0e18-ea8f-4a3a-bc43-80a2540ed0d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\header_file\ECS">
+      <UniqueIdentifier>{0d97cd8a-d6c6-448c-b744-4605b81542b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -80,12 +83,6 @@
     <ClInclude Include="..\02_header_file\Button.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
-    <ClInclude Include="..\02_header_file\ECS.h">
-      <Filter>Header Files\header_file</Filter>
-    </ClInclude>
-    <ClInclude Include="..\02_header_file\Components.h">
-      <Filter>Header Files\header_file</Filter>
-    </ClInclude>
     <ClInclude Include="..\02_header_file\SceneManager.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
@@ -103,6 +100,18 @@
     </ClInclude>
     <ClInclude Include="..\02_header_file\AudioManager.hpp">
       <Filter>Header Files\header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\ECS.h">
+      <Filter>Header Files\header_file\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\Components.h">
+      <Filter>Header Files\header_file\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\SpriteComponent.h">
+      <Filter>Header Files\header_file\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\PositionComponent.h">
+      <Filter>Header Files\header_file\ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

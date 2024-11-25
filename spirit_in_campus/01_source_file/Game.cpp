@@ -29,6 +29,7 @@
 #include <iostream>
 #include "ArrowEnemy.h"
 #include "SceneManager.h"
+#include "Components.h"
 
 GameObject* player;
 GameObject* tmp;
