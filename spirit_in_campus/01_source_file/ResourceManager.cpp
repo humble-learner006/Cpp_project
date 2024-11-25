@@ -2,7 +2,7 @@
 #include "ResourceManager.h"
 
 
-void Scene1::loadResources(SDL_Renderer* renderer)
+void Scene1::loadResources(SDL_Renderer* renderer) 
 {
 	startButton = new Button("Begin", 100, 100, 200, 50, renderer);
 	settingsButton = new Button("Settings", 100, 200, 200, 50, renderer);
