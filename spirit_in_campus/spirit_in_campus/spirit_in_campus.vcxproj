@@ -142,7 +142,6 @@
     <ClCompile Include="..\01_source_file\Game.cpp" />
     <ClCompile Include="..\01_source_file\GameObject.cpp" />
     <ClCompile Include="..\01_source_file\GLOBAL.cpp" />
-    <ClCompile Include="..\01_source_file\interactiveObject.cpp" />
     <ClCompile Include="..\01_source_file\map.cpp" />
     <ClCompile Include="..\01_source_file\Menu.cpp" />
     <ClCompile Include="..\01_source_file\ResourceManager.cpp" />
@@ -159,7 +158,6 @@
     <ClInclude Include="..\02_header_file\Game.h" />
     <ClInclude Include="..\02_header_file\GameObject.h" />
     <ClInclude Include="..\02_header_file\GLOBAL.h" />
-    <ClInclude Include="..\02_header_file\interactiveObject.h" />
     <ClInclude Include="..\02_header_file\map.h" />
     <ClInclude Include="..\02_header_file\Menu.h" />
     <ClInclude Include="..\02_header_file\PositionComponent.h" />

@@ -24,7 +24,6 @@
 #include "Button.h"
 #include "TextureManager.h"
 #include "GameObject.h"
-#include "interactiveObject.h"
 #include "GLOBAL.h"
 #include <iostream>
 #include "ArrowEnemy.h"

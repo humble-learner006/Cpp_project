@@ -33,9 +33,6 @@
     <ClCompile Include="..\01_source_file\GameObject.cpp">
       <Filter>Source Files\source_file</Filter>
     </ClCompile>
-    <ClCompile Include="..\01_source_file\interactiveObject.cpp">
-      <Filter>Source Files\source_file</Filter>
-    </ClCompile>
     <ClCompile Include="..\01_source_file\TextureManager.cpp">
       <Filter>Source Files\source_file</Filter>
     </ClCompile>
@@ -66,9 +63,6 @@
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
     <ClInclude Include="..\02_header_file\GameObject.h">
-      <Filter>Header Files\header_file</Filter>
-    </ClInclude>
-    <ClInclude Include="..\02_header_file\interactiveObject.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
     <ClInclude Include="..\02_header_file\TextureManager.h">
