@@ -122,7 +122,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	// ECS implementation
 	newPlayer.addComponent<PositionComponent>();
-	newPlayer.addComponent<SpriteComponent>("../00_Asset/bunny_outline.png");
+	newPlayer.addComponent<SpriteComponent>("../00_Asset/spirit.png",7,150);
 }
 // Handle player's events keyboard/mouse
 void Game::handleEvent() {
