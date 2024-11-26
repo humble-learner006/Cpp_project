@@ -22,18 +22,21 @@
     <Filter Include="Resource Files\Assest">
       <UniqueIdentifier>{ad9e0e18-ea8f-4a3a-bc43-80a2540ed0d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\header_file\ECS">
+      <UniqueIdentifier>{0d97cd8a-d6c6-448c-b744-4605b81542b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\header_file\Manager">
+      <UniqueIdentifier>{60c94cff-0afa-4db7-8948-d0ef9bdac208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\source_file\Manager">
+      <UniqueIdentifier>{c1e0c867-02f1-4b17-8deb-6fcfd8282388}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\01_source_file\GameObject.cpp">
-      <Filter>Source Files\source_file</Filter>
-    </ClCompile>
-    <ClCompile Include="..\01_source_file\interactiveObject.cpp">
-      <Filter>Source Files\source_file</Filter>
-    </ClCompile>
-    <ClCompile Include="..\01_source_file\TextureManager.cpp">
       <Filter>Source Files\source_file</Filter>
     </ClCompile>
     <ClCompile Include="..\01_source_file\Game.cpp">
@@ -55,7 +58,10 @@
       <Filter>Source Files\source_file</Filter>
     </ClCompile>
     <ClCompile Include="..\01_source_file\ResourceManager.cpp">
-      <Filter>Source Files\source_file</Filter>
+      <Filter>Source Files\source_file\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\01_source_file\TextureManager.cpp">
+      <Filter>Source Files\source_file\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,12 +69,6 @@
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
     <ClInclude Include="..\02_header_file\GameObject.h">
-      <Filter>Header Files\header_file</Filter>
-    </ClInclude>
-    <ClInclude Include="..\02_header_file\interactiveObject.h">
-      <Filter>Header Files\header_file</Filter>
-    </ClInclude>
-    <ClInclude Include="..\02_header_file\TextureManager.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
     <ClInclude Include="..\02_header_file\common.h">
@@ -80,15 +80,6 @@
     <ClInclude Include="..\02_header_file\Button.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
-    <ClInclude Include="..\02_header_file\ECS.h">
-      <Filter>Header Files\header_file</Filter>
-    </ClInclude>
-    <ClInclude Include="..\02_header_file\Components.h">
-      <Filter>Header Files\header_file</Filter>
-    </ClInclude>
-    <ClInclude Include="..\02_header_file\SceneManager.h">
-      <Filter>Header Files\header_file</Filter>
-    </ClInclude>
     <ClInclude Include="..\02_header_file\GLOBAL.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
@@ -98,11 +89,29 @@
     <ClInclude Include="..\02_header_file\ArrowEnemy.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
+    <ClInclude Include="..\02_header_file\ECS.h">
+      <Filter>Header Files\header_file\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\Components.h">
+      <Filter>Header Files\header_file\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\SpriteComponent.h">
+      <Filter>Header Files\header_file\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\PositionComponent.h">
+      <Filter>Header Files\header_file\ECS</Filter>
+    </ClInclude>
     <ClInclude Include="..\02_header_file\ResourceManager.h">
-      <Filter>Header Files\header_file</Filter>
+      <Filter>Header Files\header_file\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\SceneManager.h">
+      <Filter>Header Files\header_file\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\TextureManager.h">
+      <Filter>Header Files\header_file\Manager</Filter>
     </ClInclude>
     <ClInclude Include="..\02_header_file\AudioManager.hpp">
-      <Filter>Header Files\header_file</Filter>
+      <Filter>Header Files\header_file\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
