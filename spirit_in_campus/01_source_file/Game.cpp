@@ -28,7 +28,9 @@
 #include <iostream>
 #include "ArrowEnemy.h"
 #include "SceneManager.h"
+
 #include "Components.h"
+#include "ECS.h"
 
 GameObject* player;
 GameObject* tmp;
@@ -47,6 +49,10 @@ Button* resumeButton;
 Button* volumeButton;
 Button* returnButton;
 ArrowEnemy* arrow_enemy;
+
+// !!init entity through manager
+Manager manager;
+auto& newPlayer(manager.addEntity());
 
 SDL_Renderer* Game::renderer = nullptr;
 
@@ -112,6 +118,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	// Arrow enemy
 	arrow_enemy = new ArrowEnemy("../00_Asset/black_cat-sheet.png", 1000, 500, 100, 100, player);
+
+
+	// ECS implementation
+	newPlayer.addComponent<PositionComponent>();
+	newPlayer.addComponent<SpriteComponent>("../00_Asset/bunny_outline.png");
 }
 // Handle player's events keyboard/mouse
 void Game::handleEvent() {
@@ -233,6 +244,8 @@ void Game::update() {
 		arrow_enemy->Update();
 		label->Update(currentTime);
 
+		manager.refresh();
+		manager.update();
 	}
 }
 
@@ -253,6 +266,8 @@ void Game::render() {
 		instrument1->Render();
 		label->Render();
 		esc->Render();
+
+		manager.draw();
 	}
 	else if (currentState == PAUSE) {
 		scene_music->DrawMap();
