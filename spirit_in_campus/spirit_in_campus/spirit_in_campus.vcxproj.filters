@@ -95,10 +95,7 @@
     <ClInclude Include="..\02_header_file\Components.h">
       <Filter>Header Files\header_file\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="..\02_header_file\SpriteComponent.h">
-      <Filter>Header Files\header_file\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="..\02_header_file\PositionComponent.h">
+    <ClInclude Include="..\02_header_file\TransformComponent.h">
       <Filter>Header Files\header_file\ECS</Filter>
     </ClInclude>
     <ClInclude Include="..\02_header_file\ResourceManager.h">
@@ -112,6 +109,12 @@
     </ClInclude>
     <ClInclude Include="..\02_header_file\AudioManager.hpp">
       <Filter>Header Files\header_file\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\SpriteComponent.h">
+      <Filter>Header Files\header_file\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\02_header_file\Vector2D.h">
+      <Filter>Header Files\header_file</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

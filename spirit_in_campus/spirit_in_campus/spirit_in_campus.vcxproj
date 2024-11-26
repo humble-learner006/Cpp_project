@@ -160,11 +160,12 @@
     <ClInclude Include="..\02_header_file\GLOBAL.h" />
     <ClInclude Include="..\02_header_file\map.h" />
     <ClInclude Include="..\02_header_file\Menu.h" />
-    <ClInclude Include="..\02_header_file\PositionComponent.h" />
+    <ClInclude Include="..\02_header_file\TransformComponent.h" />
     <ClInclude Include="..\02_header_file\ResourceManager.h" />
     <ClInclude Include="..\02_header_file\SceneManager.h" />
     <ClInclude Include="..\02_header_file\SpriteComponent.h" />
     <ClInclude Include="..\02_header_file\TextureManager.h" />
+    <ClInclude Include="..\02_header_file\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\00_Asset\bunny_grass.png" />
