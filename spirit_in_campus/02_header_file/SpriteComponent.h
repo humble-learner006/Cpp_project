@@ -8,15 +8,29 @@ private:
 	SDL_Texture* texture;
 	SDL_Rect srcRect, destRect;
 
-public:
+	bool animated = false;
+	int frames = 0;
+	int speed = 100;
 
+public:
+// motionless picture
 	SpriteComponent() = default;
 	SpriteComponent(const char* path) {
 		setTex(path);
-
 	}
-	// change the texture picture, can substitute highlight and dehighlight function
-	void setTex(const char* path) {
+// override in animation form
+	SpriteComponent(const char* path, int nFrames, int mSpeed) {
+		animated = true;
+		frames = nFrames;
+		speed = mSpeed;
+		setTex(path);
+	}
+// clean up
+	~SpriteComponent(){
+		SDL_DestroyTexture(texture);
+	}
+
+	void setTex(const char* path){
 		texture = TextureManager::LoadTexture(path);
 	}
 
@@ -24,14 +38,18 @@ public:
 
 		transform = &entity->getComponent<TransformComponent>();
 
-		srcRect.x = 0;
-		srcRect.y = 0;
-		srcRect.h = srcRect.w = 100;
+		srcRect.x = srcRect.y = 0;
+		srcRect.h = srcRect.w = 320;
 		destRect.h = destRect.w = 200;
 		 
 	}
 
 	void update() override {
+
+		if (animated)
+		{
+			srcRect.x = srcRect.w * static_cast<int>((SDL_GetTicks()/speed)%frames);
+		}
 		destRect.x = transform->x();
 		destRect.y = transform->y();
 	}
