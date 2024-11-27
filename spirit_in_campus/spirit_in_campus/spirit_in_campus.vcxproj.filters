@@ -63,6 +63,9 @@
     <ClCompile Include="..\01_source_file\TextureManager.cpp">
       <Filter>Source Files\source_file\Manager</Filter>
     </ClCompile>
+    <ClCompile Include="..\01_source_file\Vector2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\02_header_file\Game.h">

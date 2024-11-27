@@ -146,6 +146,7 @@
     <ClCompile Include="..\01_source_file\Menu.cpp" />
     <ClCompile Include="..\01_source_file\ResourceManager.cpp" />
     <ClCompile Include="..\01_source_file\TextureManager.cpp" />
+    <ClCompile Include="..\01_source_file\Vector2D.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

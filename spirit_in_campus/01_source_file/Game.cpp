@@ -31,6 +31,7 @@
 
 #include "Components.h"
 #include "ECS.h"
+#include "Vector2D.h"
 
 GameObject* player;
 GameObject* tmp;
@@ -121,7 +122,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 
 	// ECS implementation
-	newPlayer.addComponent<TransformComponent>(0,300);
+	newPlayer.addComponent<TransformComponent>();
 	newPlayer.addComponent<SpriteComponent>("../00_Asset/spirit.png",7,150);
 }
 // Handle player's events keyboard/mouse
@@ -246,6 +247,7 @@ void Game::update() {
 
 		manager.refresh();
 		manager.update();
+		newPlayer.getComponent<TransformComponent>().position.Add(Vector2D(5, 0));
 	}
 }
 
