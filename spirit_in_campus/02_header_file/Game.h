@@ -46,6 +46,7 @@ public:
 
 	// Use to render
 	static SDL_Renderer* renderer;
+	static SDL_Event event;
 
 private:
 	// Through different current state, we can do different operations

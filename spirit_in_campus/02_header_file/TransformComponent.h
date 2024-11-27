@@ -1,6 +1,7 @@
 #pragma once
 #include "Components.h"
 #include "Vector2D.h"
+// This header file : Transform Componenet.h is used for control the move
 
 class TransformComponent : public Component
 {
@@ -8,6 +9,11 @@ class TransformComponent : public Component
 public:
 
 	Vector2D position;
+	Vector2D velocity;
+
+	int speed = 3; // test number
+
+	
 
 	TransformComponent() {
 		position.x = 0.0f;
@@ -24,10 +30,19 @@ public:
 		xpos = 0;
 		ypos = 0;
 	}*/
+	void init() override{
+		velocity.x = 0;
+		velocity.y = 0;
+		// initialize as don't move the player 
+	}
 
 	void update() override
 	{
+		position.x += velocity.x * speed;
+		position.y += velocity.y * speed;
+
 	}
+
 
 	void setPos(int x, int y)
 	{

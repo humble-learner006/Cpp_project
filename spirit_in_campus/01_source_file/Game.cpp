@@ -51,9 +51,13 @@ Button* volumeButton;
 Button* returnButton;
 ArrowEnemy* arrow_enemy;
 
-// !!init entity through manager
-Manager manager;
-auto& newPlayer(manager.addEntity());
+
+// from tutorial 
+// Map* map; // init map type object
+Manager manager; // !!init entity through manager
+SDL_Event Game :: event; // event ctrl in ECS way
+auto& newPlayer(manager.addEntity()); //create example
+
 
 SDL_Renderer* Game::renderer = nullptr;
 
@@ -121,9 +125,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	arrow_enemy = new ArrowEnemy("../00_Asset/black_cat-sheet.png", 1000, 500, 100, 100, player);
 
 
-	// ECS implementation
+	// !! ECS implementation
+	// here we add all properties of the entity
 	newPlayer.addComponent<TransformComponent>();
 	newPlayer.addComponent<SpriteComponent>("../00_Asset/spirit.png",7,150);
+	newPlayer.addComponent<KeyboardController>();
 }
 // Handle player's events keyboard/mouse
 void Game::handleEvent() {
@@ -238,16 +244,18 @@ void Game::handleEvent() {
 void Game::update() {
 	Uint32 currentTime = SDL_GetTicks();
 	if (currentState == PLAYING) {
+		// Old implementation
 		player->Update();
 		tmp->Update();
 		plant->Update();
 		instrument1 -> Update();		
 		arrow_enemy->Update();
 		label->Update(currentTime);
-
+		// !! ECS implementation
 		manager.refresh();
 		manager.update();
-		newPlayer.getComponent<TransformComponent>().position.Add(Vector2D(5, 0));
+		// newPlayer.getComponent<TransformComponent>().position.Add(Vector2D(5, 0));
+
 	}
 }
 

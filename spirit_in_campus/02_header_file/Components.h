@@ -2,18 +2,22 @@
 #include "ECS.h"
 #include "TransformComponent.h"
 #include "SpriteComponent.h"
+#include "TransformComponent.h"
+
+//#include "KeyboardController.h"
 
 
-// class VelocityComponent : public Component //´æ´¢ÊµÌåµÄÒÆ¶¯ËÙ¶È¡£
+
+// class VelocityComponent : public Component //ï¿½æ´¢Êµï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Ù¶È¡ï¿½
 	
 
-// class RenderComponent : public Component//´æ´¢äÖÈ¾ÐÅÏ¢£¨¾«Áé¡¢¶¯»­µÈ£©¡£
+// class RenderComponent : public Component//ï¿½æ´¢ï¿½ï¿½È¾ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½é¡¢ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½
 
 	
-// class ControlComponent : public Component//´æ´¢ÊäÈë¿ØÖÆÐÅÏ¢¡£
+// class ControlComponent : public Component//ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
 
 
-// class CollisionComponent : public Component //´æ´¢Åö×²ºÐÐÅÏ¢¡£
+// class CollisionComponent : public Component //ï¿½æ´¢ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
 
 
-// class HealthComponent public Component// ´æ´¢ÉúÃüÖµÐÅÏ¢¡£
+// class HealthComponent public Component// ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ï¢ï¿½ï¿½
