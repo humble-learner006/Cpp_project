@@ -26,6 +26,9 @@ public:
 	Vector2D& operator*=(const Vector2D& vec);
 	Vector2D& operator/=(const Vector2D& vec);
 
-	friend std::ostream& operator<<(std::ostream& stream, const Vector2D& vec);
+	Vector2D& operator*(const int& i);//mutiplky a vector by an integer
+	Vector2D& Zero();//let the vector to be (0,0)
+
+	friend std::ostream& operator<<(std::ostream& stream, const Vector2D& vec); 
 
 };
