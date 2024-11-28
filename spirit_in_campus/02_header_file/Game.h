@@ -48,6 +48,9 @@ public:
 	static SDL_Renderer* renderer;
 	static SDL_Event event;
 
+	//1128
+	static void AddTile(int id, int x, int y);
+
 private:
 	// Through different current state, we can do different operations
 	enum GameState { MAIN, SETTING, PLAYING, PAUSE, SCENE1};

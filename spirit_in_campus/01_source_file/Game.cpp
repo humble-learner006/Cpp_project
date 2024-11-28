@@ -240,6 +240,9 @@ void Game::handleEvent() {
 	}
 }
 
+//1128 加载地图，其中地图路径是错的，从视频里抄的
+map::LoadMap("assets / p16x16.map", 16, 16);
+
 // Update postions of moving objects
 void Game::update() {
 	Uint32 currentTime = SDL_GetTicks();
@@ -323,4 +326,11 @@ void Game::clean() {
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
+}
+
+//1128 使得tile可以在游戏中被渲染
+void Game::AddTile(int id, int x, int y)
+{
+	auto& tile(manager.addEntity());
+	tile.addComponent<TileComponent>(x, y, 32, 32, id);
 }
