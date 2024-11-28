@@ -17,7 +17,7 @@ public:
 
 	TileComponent() = default;
 
-	TileComponent(int x, int y, int w, int h, int id)
+	TileComponent(int x, int y, int w, int h, int id) // id is the type of tile
 	{
 		tileRect.x = x;
 		tileRect.y = y;
@@ -27,16 +27,16 @@ public:
 
 		switch (tileID)
 		{
-			case 0:
-				path = "assets/water.png"; 
-				break;
-			case 1:
-				path = "assets/dirt.png"; 
-				break;
-			case 2:
-				path = "assets/grass.png"; 
-			default:
-				break;
+		case 0:
+			path = "assets/water.png";
+			break;
+		case 1:
+			path = "assets/dirt.png";
+			break;
+		case 2:
+			path = "assets/grass.png";
+		default:
+			break;
 		}
 	}
 
@@ -48,4 +48,4 @@ public:
 		entity->addComponent<SpriteComponent>(path);
 		sprite = &entity->getComponent<SpriteComponent>();
 	}
-}
+};
