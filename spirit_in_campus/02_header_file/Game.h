@@ -16,6 +16,9 @@
 #include "Button.h"
 #include "Menu.h"
 #include <iostream>
+#include <vector>
+
+class ColliderComponent;
 
 class Game
 {
@@ -47,6 +50,7 @@ public:
 	// Use to render
 	static SDL_Renderer* renderer;
 	static SDL_Event event;
+	static std::vector<ColliderComponent*> colliders;
 
 private:
 	// Through different current state, we can do different operations

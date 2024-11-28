@@ -58,6 +58,7 @@ Manager manager; // !!init entity through manager
 SDL_Event Game :: event; // event ctrl in ECS way
 auto& newPlayer(manager.addEntity()); //create example
 
+std::vector<ColliderComponent*> Game::colliders;
 
 SDL_Renderer* Game::renderer = nullptr;
 
