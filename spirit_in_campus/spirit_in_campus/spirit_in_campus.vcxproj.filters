@@ -119,6 +119,9 @@
     <ClInclude Include="..\02_header_file\Vector2D.h">
       <Filter>Header Files\header_file</Filter>
     </ClInclude>
+    <ClInclude Include="..\02_header_file\TileComponent.h">
+      <Filter>Header Files\header_file\ECS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\00_Asset\bunny_grass.png">

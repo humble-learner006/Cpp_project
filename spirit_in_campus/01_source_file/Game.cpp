@@ -58,6 +58,9 @@ Manager manager; // !!init entity through manager
 SDL_Event Game :: event; // event ctrl in ECS way
 auto& newPlayer(manager.addEntity()); //create example
 
+std::vector<ColliderComponent*> Game::colliders;
+
+auto& tile0(manager.addEntity());
 
 SDL_Renderer* Game::renderer = nullptr;
 
@@ -130,6 +133,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	newPlayer.addComponent<TransformComponent>();
 	newPlayer.addComponent<SpriteComponent>("../00_Asset/spirit.png",7,150);
 	newPlayer.addComponent<KeyboardController>();
+
+	tile0.addComponent<TileComponent>(200, 200, 32, 32, 0);
 }
 // Handle player's events keyboard/mouse
 void Game::handleEvent() {
