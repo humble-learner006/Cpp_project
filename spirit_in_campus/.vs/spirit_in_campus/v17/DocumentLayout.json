@@ -96,7 +96,7 @@
               "RelativeDocumentMoniker": "02_header_file\\TileComponent.h",
               "ToolTip": "D:\\University\\CS\\csc3002_project\\spirit_in_campus\\02_header_file\\TileComponent.h",
               "RelativeToolTip": "02_header_file\\TileComponent.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-28T11:41:38.17Z",
               "EditorCaption": ""
@@ -111,8 +111,7 @@
               "RelativeToolTip": "02_header_file\\Game.h",
               "ViewState": "AgIAACoAAAAAAAAAAAAAADQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-15T02:05:26.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T02:05:26.829Z"
             },
             {
               "$type": "Document",
@@ -124,8 +123,7 @@
               "RelativeToolTip": "01_source_file\\Game.cpp",
               "ViewState": "AgIAAFoAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-15T02:05:26.826Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T02:05:26.826Z"
             },
             {
               "$type": "Document",
@@ -137,8 +135,7 @@
               "RelativeToolTip": "01_source_file\\GameObject.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T14:09:15.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T14:09:15.095Z"
             },
             {
               "$type": "Document",
@@ -162,8 +159,7 @@
               "RelativeToolTip": "02_header_file\\Components.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T13:52:18.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T13:52:18.774Z"
             },
             {
               "$type": "Document",
