@@ -2,7 +2,8 @@
 #include "ECS.h"
 #include "TransformComponent.h"
 #include "SpriteComponent.h"
-
+#include "TransformComponent.h"
+#include "TileComponent.h"
 
 #include "KeyboardController.h"
 

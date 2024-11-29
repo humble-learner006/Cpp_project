@@ -161,6 +161,7 @@
     <ClInclude Include="..\02_header_file\GLOBAL.h" />
     <ClInclude Include="..\02_header_file\map.h" />
     <ClInclude Include="..\02_header_file\Menu.h" />
+    <ClInclude Include="..\02_header_file\TileComponent.h" />
     <ClInclude Include="..\02_header_file\TransformComponent.h" />
     <ClInclude Include="..\02_header_file\ResourceManager.h" />
     <ClInclude Include="..\02_header_file\SceneManager.h" />

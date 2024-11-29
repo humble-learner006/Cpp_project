@@ -60,6 +60,9 @@ Manager manager; // !!init entity through manager
 SDL_Event Game::event; // event ctrl in ECS way
 auto& newPlayer(manager.addEntity()); //create example
 
+std::vector<ColliderComponent*> Game::colliders;
+
+auto& tile0(manager.addEntity());
 
 SDL_Renderer* Game::renderer = nullptr;
 
@@ -132,6 +135,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	newPlayer.addComponent<TransformComponent>();
 	newPlayer.addComponent<SpriteComponent>("../00_Asset/spirit.png",7,150);
 	newPlayer.addComponent<KeyboardController>();
+
+	tile0.addComponent<TileComponent>(200, 200, 32, 32, 0);
 }
 // Handle player's events keyboard/mouse
 void Game::handleEvent() {
@@ -242,6 +247,9 @@ void Game::handleEvent() {
 	}
 }
 
+//1128 加载地图，其中地图路径是错的，从视频里抄的
+map::LoadMap("assets / p16x16.map", 16, 16);
+
 // Update postions of moving objects
 void Game::update() {
 	Uint32 currentTime = SDL_GetTicks();
@@ -325,4 +333,11 @@ void Game::clean() {
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
+}
+
+//1128 使得tile可以在游戏中被渲染
+void Game::AddTile(int id, int x, int y)
+{
+	auto& tile(manager.addEntity());
+	tile.addComponent<TileComponent>(x, y, 32, 32, id);
 }
