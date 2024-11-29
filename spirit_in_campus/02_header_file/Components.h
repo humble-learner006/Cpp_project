@@ -2,22 +2,22 @@
 #include "ECS.h"
 #include "TransformComponent.h"
 #include "SpriteComponent.h"
-#include "TransformComponent.h"
-
-//#include "KeyboardController.h"
 
 
+#include "KeyboardController.h"
 
-// class VelocityComponent : public Component //�洢ʵ����ƶ��ٶȡ�
+
+
+// class VelocityComponent : public Component 
 	
 
-// class RenderComponent : public Component//�洢��Ⱦ��Ϣ�����顢�����ȣ���
+// class RenderComponent : public Component
 
 	
-// class ControlComponent : public Component//�洢���������Ϣ��
+// class ControlComponent : public Component
 
 
-// class CollisionComponent : public Component //�洢��ײ����Ϣ��
+// class CollisionComponent : public Component 
 
 
-// class HealthComponent public Component// �洢����ֵ��Ϣ��
+// class HealthComponent public Component

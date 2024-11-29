@@ -26,8 +26,10 @@
 #include "GameObject.h"
 #include "GLOBAL.h"
 #include <iostream>
+
 #include "ArrowEnemy.h"
 #include "SceneManager.h"
+
 
 #include "Components.h"
 #include "ECS.h"
@@ -55,7 +57,7 @@ ArrowEnemy* arrow_enemy;
 // from tutorial 
 // Map* map; // init map type object
 Manager manager; // !!init entity through manager
-SDL_Event Game :: event; // event ctrl in ECS way
+SDL_Event Game::event; // event ctrl in ECS way
 auto& newPlayer(manager.addEntity()); //create example
 
 
@@ -158,7 +160,7 @@ void Game::handleEvent() {
 	}
 
 	// Button, Label, Possesion
-	SDL_Event event;
+	
 	while (SDL_PollEvent(&event)) {
 
 		if (event.type == SDL_QUIT) {
@@ -254,7 +256,7 @@ void Game::update() {
 		// !! ECS implementation
 		manager.refresh();
 		manager.update();
-		// newPlayer.getComponent<TransformComponent>().position.Add(Vector2D(5, 0));
+
 
 	}
 }

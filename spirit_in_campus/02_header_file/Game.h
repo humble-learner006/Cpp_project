@@ -44,8 +44,8 @@ public:
 	*/
 	bool running() { return isRunning; }	
 
-	// Use to render
-	static SDL_Renderer* renderer;
+	
+	static SDL_Renderer* renderer; // Use to render
 	static SDL_Event event;
 
 private:

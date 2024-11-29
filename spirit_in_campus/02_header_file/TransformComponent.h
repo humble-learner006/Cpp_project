@@ -14,7 +14,6 @@ public:
 	int speed = 3; // test number
 
 	
-
 	TransformComponent() {
 		position.x = 0.0f;
 		position.y = 0.0f;
@@ -30,6 +29,7 @@ public:
 		xpos = 0;
 		ypos = 0;
 	}*/
+
 	void init() override{
 		velocity.x = 0;
 		velocity.y = 0;
